@@ -38,11 +38,14 @@
   <br>
                     <input size="50" type="submit" value="Print Reports Page" class="btn5" onClick="window.print()"/>
 
-
+                    <br>
+                    <br>
+                    <br>
+                 
 
 </div>
 
 
 </body>
-<footer> Â© Copyrights 2016 Jeewantha Abayakoon  </footer>
+<footer> © Copyrights 2016 Jeewantha Abayakoon  </footer>
 </html>
