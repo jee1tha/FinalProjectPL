@@ -45,6 +45,6 @@
 
 
 
-<footer> Â© Copyrights 2016 InGrow  </footer>
+<footer> © Copyrights 2016 InGrow  </footer>
 </body>
 </html>

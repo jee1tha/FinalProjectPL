@@ -48,7 +48,7 @@
 
             <input type='submit' class="btn"  value="Submit" id="btnSkills">
             </input>
-            <a href="Home.jsp" class="btn">Cancel </a>
+            <a href="index.jsp" class="btn">Cancel </a>
             </input>
 
         </p>
@@ -60,6 +60,6 @@
 
 
 
-<footer> Â© Copyrights 2016 InGrow  </footer>
+<footer> © Copyrights 2016 InGrow  </footer>
 </body>
 </html>

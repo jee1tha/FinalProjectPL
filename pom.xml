@@ -7,6 +7,9 @@
   <version>v1</version>
   <name>pl Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+		<spring.version>3.0.5.RELEASE</spring.version>
+	</properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,8 +17,105 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    
   </dependencies>
+  
   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jvnet.jax-ws-commons</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <version>2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+            <configuration>
+              <wsdlFiles>
+                <wsdlFile>localhost_8080/business/NewWebService.wsdl</wsdlFile>
+              </wsdlFiles>
+              <packageName></packageName>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
+              <wsdlLocation>http://localhost:8080/business/NewWebService?wsdl</wsdlLocation>
+              <staleFile>${project.build.directory}/jaxws/stale/NewWebService.stale</staleFile>
+            </configuration>
+            <id>wsimport-generate-NewWebService</id>
+            <phase>generate-sources</phase>
+          </execution>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+            <configuration>
+              <wsdlFiles>
+                <wsdlFile>localhost_8080/business/NewWebService.wsdl</wsdlFile>
+              </wsdlFiles>
+              <packageName></packageName>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
+              <wsdlLocation>http://localhost:8080/business/NewWebService?wsdl</wsdlLocation>
+              <staleFile>${project.build.directory}/jaxws/stale/NewWebService_1.stale</staleFile>
+            </configuration>
+            <id>wsimport-generate-NewWebService_1</id>
+            <phase>generate-sources</phase>
+          </execution>
+          <execution>
+            <goals>
+              <goal>wsimport</goal>
+            </goals>
+            <configuration>
+              <wsdlFiles>
+                <wsdlFile>localhost_8080/business/NewWebService.wsdl</wsdlFile>
+              </wsdlFiles>
+              <packageName></packageName>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
+              <wsdlLocation>http://localhost:8080/business/NewWebService?wsdl</wsdlLocation>
+              <staleFile>${project.build.directory}/jaxws/stale/NewWebService_2.stale</staleFile>
+            </configuration>
+            <id>wsimport-generate-NewWebService_2</id>
+            <phase>generate-sources</phase>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>javax.xml</groupId>
+            <artifactId>webservices-api</artifactId>
+            <version>2.0</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <sourceDestDir>${project.build.directory}/generated-sources/jaxws-wsimport</sourceDestDir>
+          <xnocompile>true</xnocompile>
+          <verbose>true</verbose>
+          <extension>true</extension>
+          <catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>src</directory>
+              <targetPath>WEB-INF</targetPath>
+              <includes>
+                <include>jax-ws-catalog.xml</include>
+                <include>wsdl/**</include>
+              </includes>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+    </plugins>
     <finalName>pl</finalName>
   </build>
 </project>
