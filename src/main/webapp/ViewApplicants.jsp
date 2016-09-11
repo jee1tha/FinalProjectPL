@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <!DOCTYPE html>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-      <title>Bills</title>
+      <title>Report</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link href="home.css" rel="stylesheet" type="text/css" />
    </head>
@@ -18,10 +20,12 @@
          <div class="row"> 
             <div class="col-md-12 col-sm-5 text-center" id="welcome2">Applicant Report</div>
          </div>
+            
          <div class="row">
+         <jsp:include page="nav.jsp" />
             <div class="col-md-12 col-sm-5 col-xs-12">
                
-                  <h1 class="btn2">Report</h1>
+                  <h1 class="btn2">Analysis</h1>
                   <div class="table-responsive">
                    
                         <table  class="table" border="1"  >

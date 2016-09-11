@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <!DOCTYPE html>
 <html>
    <head>
       <link href="home.css" rel="stylesheet" type="text/css" />
@@ -15,10 +17,13 @@
                <marquee>Enter your Information so we can evaluate you </marquee>
             </div>
          </div>
+        
          <div class="row">
             <div class="col-md-12 col-sm-6 pagination-centered " id=welcome2  > Add your Information  
             </div>
+             
          </div>
+            <jsp:include page="nav.jsp" />
          </td>
          <div id=bodymid>
             <form id="userinformationform" method="Post" action="CheckAdminLogin.jsp">

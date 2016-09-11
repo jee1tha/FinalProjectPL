@@ -1,8 +1,11 @@
-<doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-      <title>Register User</title>
+      <title>Admin Register</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link href="home.css" rel="stylesheet" type="text/css" />
    </head>
@@ -11,25 +14,20 @@
    <body>
       <div class="container ">
          <div class="row">
-            <div class="col-md-12 col-sm-6" id=welcome1>
+            <div class="col-md-12 col-sm-6 text-center" id=welcome1>
                <marquee>A little bit more to become a member !!</marquee>
             </div>
          </div>
          <div class="row">
             <div class="col-md-9 col-sm-5" id="welcome2">InGrow Job Application Management</div>
-            <div class="col-md-3 col-sm-1"  >
-               <span class="glyphicon glyphicon-user">
-                  <a href="login.html">
-                     <h4>Login Here</h4>
-                  </a>
-               </span>
-            </div>
+         
          </div>
+            <jsp:include page="nav.jsp" />
          <div id=bodyleft>
             <div class="row">
                <div class=" col-md-12 col-sm-3 ">
                   <div id=transparent>
-                     <h1>User Registration</h1>
+                     <h1>Admin Registration</h1>
                   </div>
                   <form method="Post" action="AddAdminConfirm.jsp">
                      <table width="200" border="0" cellpadding="5">
@@ -48,7 +46,7 @@
                </tr>
                <tr>
                <td><label for="txtConfirmPassword"> Confirm Password </label></td>
-               <td><input type='confirmPassword' name='txtConfirmPassword' class="form-control" placeholder="enter Password" id='txtPasswordConfirm' required>
+               <td><input type='password' name='txtConfirmPassword' class="form-control" placeholder="enter Password" id='txtPasswordConfirm' required>
                </input></td>
             </div>
             </tr>
@@ -58,12 +56,8 @@
                id='txtName' required> </input></td>
             </tr>
             <tr>
-            <td><label for="txtAddress"> Address</label></td>
-            <td><input type='text' name='txtAddress' class="form-control" placeholder="enter Address" id='txtAddress' required> </input></td>
-            </tr>
-            <tr>
-            <td><label for="txtNICNo"> NICNo </label></td>
-            <td><input type='text' name='txtNICNo' class="form-control" placeholder="enter NICNo" id='txtNICNo' required> </input></td>
+            <td><label for="txtEmpNo"> EmpNo </label></td>
+            <td><input type='text' name='txtEmpNo' class="form-control" placeholder="enter NICNo" id='txtEmpNo' required> </input></td>
             </tr>
             <tr>
             <td><label for="txtEmail" class="control-label"> Email </label></td>
@@ -76,7 +70,7 @@
             </tr>
             </table>
             <input type='submit' class="btn btn-success" value="Submit" id="btnLogin">
-            </input> <a href="index.jsp" class="btn btn-default">Cancel </a> </input>
+            </input> <a href="index.jsp" class="btn btn-danger">Cancel </a> </input>
             </form>
          </div>
       </div>
@@ -97,6 +91,6 @@
          });
       </script>
    </body>
-   <footer>  © Copyrights 2016 Project InGrow </footer>
+   <footer>  Copyrights 2016 Project InGrow </footer>
    </div>
 </html>
