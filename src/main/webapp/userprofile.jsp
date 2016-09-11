@@ -1,7 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-   
-    <!DOCTYPE html>
-<doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,25 +17,23 @@
 	<div class="container">
         <div class="row">
         <div class="col-md-12 col-sm-6" id=welcome1>
-		<marquee>Welcome to InGrow. Your Automated Applicant Ranking System.</marquee>
+		<marquee>Viewing User Profile</marquee>
         </div>
         </div>
     <div class="row">
-	<div class="col-md-12 col-sm-6 text-center" id= "welcome2">  InGrow - Intelligent Growth </div>
+	<div class="col-md-10 col-sm-4 " id= "welcome2">  PROFIEL NAME GOES HERE </div>
     
-
-      
-      
+    <div class="col-md-2 col-sm-2 " >    
+        <span class="glyphicon glyphicon-user">      </span>
+       
+       </div>
     </div>
-     <div class="row">
-     <div class="col-md-12 col-sm-6 " > 
-     <jsp:include page="nav.jsp" />
-      </div> 
-     </div> 
+
     <div class="row">
+      <jsp:include page="nav.jsp" />
         <div class="col-md-6 col-sm-3 panel-group"  >
              <div class="panel panel-info">
-                 <div class="panel-body"> <h3> What is Project InGrow?</h3> </div>
+                 <div class="panel-body"> <h3> BIOGRAPHY</h3> </div>
              </div>
            
          </div>
@@ -44,12 +41,14 @@
          <div class="panel panel-info">
                 <div class="panel-body">
                     <h4>
-                        Available Vacancies 
+                        SKILLS AND QUA EXP
                     </h4>
                  </div>
         </div>
     </div>
+     <div class="row">
 
+     </div>
 
 	
 
