@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://businessOperationsLayer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://businessOperationsLayer/">
+
+<xs:element name="LoginAdmin" type="tns:LoginAdmin"/>
+
+<xs:element name="LoginAdminResponse" type="tns:LoginAdminResponse"/>
+
+<xs:element name="LoginUser" type="tns:LoginUser"/>
+
+<xs:element name="LoginUserResponse" type="tns:LoginUserResponse"/>
+
+<xs:element name="RegisterAdmin" type="tns:RegisterAdmin"/>
+
+<xs:element name="RegisterAdminResponse" type="tns:RegisterAdminResponse"/>
+
+<xs:element name="RegisterUser" type="tns:RegisterUser"/>
+
+<xs:element name="RegisterUserResponse" type="tns:RegisterUserResponse"/>
+
+<xs:element name="addExperience" type="tns:addExperience"/>
+
+<xs:element name="addExperienceResponse" type="tns:addExperienceResponse"/>
+
+<xs:element name="addJob" type="tns:addJob"/>
+
+<xs:element name="addJobResponse" type="tns:addJobResponse"/>
+
+<xs:element name="addQualifications" type="tns:addQualifications"/>
+
+<xs:element name="addQualificationsResponse" type="tns:addQualificationsResponse"/>
+
+<xs:element name="addSkills" type="tns:addSkills"/>
+
+<xs:element name="addSkillsResponse" type="tns:addSkillsResponse"/>
+
+<xs:element name="addUserInformation" type="tns:addUserInformation"/>
+
+<xs:element name="addUserInformationResponse" type="tns:addUserInformationResponse"/>
+
+<xs:element name="deleteAdmin" type="tns:deleteAdmin"/>
+
+<xs:element name="deleteAdminResponse" type="tns:deleteAdminResponse"/>
+
+<xs:element name="deleteExp" type="tns:deleteExp"/>
+
+<xs:element name="deleteExpResponse" type="tns:deleteExpResponse"/>
+
+<xs:element name="deleteJob" type="tns:deleteJob"/>
+
+<xs:element name="deleteJobResponse" type="tns:deleteJobResponse"/>
+
+<xs:element name="deleteQualifications" type="tns:deleteQualifications"/>
+
+<xs:element name="deleteQualificationsResponse" type="tns:deleteQualificationsResponse"/>
+
+<xs:element name="deleteUser" type="tns:deleteUser"/>
+
+<xs:element name="deleteUserResponse" type="tns:deleteUserResponse"/>
+
+<xs:element name="deleteskill" type="tns:deleteskill"/>
+
+<xs:element name="deleteskillResponse" type="tns:deleteskillResponse"/>
+
+<xs:element name="evaluateApplicant" type="tns:evaluateApplicant"/>
+
+<xs:element name="evaluateApplicantResponse" type="tns:evaluateApplicantResponse"/>
+
+<xs:element name="getAdminInfo" type="tns:getAdminInfo"/>
+
+<xs:element name="getAdminInfoResponse" type="tns:getAdminInfoResponse"/>
+
+<xs:element name="getApplicantExp" type="tns:getApplicantExp"/>
+
+<xs:element name="getApplicantExpResponse" type="tns:getApplicantExpResponse"/>
+
+<xs:element name="getApplicantQualifications" type="tns:getApplicantQualifications"/>
+
+<xs:element name="getApplicantQualificationsResponse" type="tns:getApplicantQualificationsResponse"/>
+
+<xs:element name="getApplicantSkills" type="tns:getApplicantSkills"/>
+
+<xs:element name="getApplicantSkillsResponse" type="tns:getApplicantSkillsResponse"/>
+
+<xs:element name="getApplicants" type="tns:getApplicants"/>
+
+<xs:element name="getApplicantsResponse" type="tns:getApplicantsResponse"/>
+
+<xs:element name="getExpInfo" type="tns:getExpInfo"/>
+
+<xs:element name="getExpInfoResponse" type="tns:getExpInfoResponse"/>
+
+<xs:element name="getJobInfo" type="tns:getJobInfo"/>
+
+<xs:element name="getJobInfoResponse" type="tns:getJobInfoResponse"/>
+
+<xs:element name="getQualificationsInfo" type="tns:getQualificationsInfo"/>
+
+<xs:element name="getQualificationsInfoResponse" type="tns:getQualificationsInfoResponse"/>
+
+<xs:element name="getSkillInfo" type="tns:getSkillInfo"/>
+
+<xs:element name="getSkillInfoResponse" type="tns:getSkillInfoResponse"/>
+
+<xs:element name="getUserEvaluationAll" type="tns:getUserEvaluationAll"/>
+
+<xs:element name="getUserEvaluationAllResponse" type="tns:getUserEvaluationAllResponse"/>
+
+<xs:element name="getUserJobInfo" type="tns:getUserJobInfo"/>
+
+<xs:element name="getUserJobInfoResponse" type="tns:getUserJobInfoResponse"/>
+
+<xs:element name="job" type="tns:job"/>
+
+<xs:element name="updateExperience" type="tns:updateExperience"/>
+
+<xs:element name="updateExperienceResponse" type="tns:updateExperienceResponse"/>
+
+<xs:element name="updateQualifications" type="tns:updateQualifications"/>
+
+<xs:element name="updateQualificationsResponse" type="tns:updateQualificationsResponse"/>
+
+<xs:element name="updateSkills" type="tns:updateSkills"/>
+
+<xs:element name="updateSkillsResponse" type="tns:updateSkillsResponse"/>
+
+<xs:complexType name="RegisterUser">
+<xs:sequence>
+<xs:element name="userObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="applicants">
+<xs:complexContent>
+<xs:extension base="tns:users">
+<xs:sequence>
+<xs:element name="appID" type="xs:int"/>
+<xs:element name="birthDate" type="xs:string" minOccurs="0"/>
+<xs:element name="nicNo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="users">
+<xs:sequence>
+<xs:element name="contactNo" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="role" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantSkills">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantSkillsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:skills" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="skills">
+<xs:sequence>
+<xs:element name="seligibility" type="xs:boolean"/>
+<xs:element name="skill" type="xs:string" minOccurs="0"/>
+<xs:element name="skillID" type="xs:int"/>
+<xs:element name="skillName" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateQualifications">
+<xs:sequence>
+<xs:element name="quaObj" type="tns:qualifications" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="qualifications">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="institute" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="qualificationsEligibility" type="xs:boolean"/>
+<xs:element name="qClass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateQualificationsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAdmin">
+<xs:sequence>
+<xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="admin">
+<xs:complexContent>
+<xs:extension base="tns:users">
+<xs:sequence>
+<xs:element name="adminID" type="xs:int"/>
+<xs:element name="empNo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="deleteAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteskill">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteskillResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSkillInfo">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSkillInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:skills" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evaluateApplicant">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evaluateApplicantResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterAdmin">
+<xs:sequence>
+<xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RegisterAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAdminInfo">
+<xs:sequence>
+<xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAdminInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:admin" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserJobInfo">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserJobInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:job" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="job">
+<xs:sequence>
+<xs:element name="jobid" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="jobDescription" type="xs:string" minOccurs="0"/>
+<xs:element name="eligibility" type="xs:double"/>
+<xs:element name="skillScore" type="xs:double"/>
+<xs:element name="expQuaScore" type="xs:double"/>
+<xs:element name="finalScore" type="xs:double"/>
+<xs:element name="applicantID" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantQualifications">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantQualificationsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:qualifications" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addExperience">
+<xs:sequence>
+<xs:element name="expObj" type="tns:experience" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="experience">
+<xs:sequence>
+<xs:element name="duration" type="xs:int"/>
+<xs:element name="exeligibility" type="xs:boolean"/>
+<xs:element name="expid" type="xs:int"/>
+<xs:element name="organization" type="xs:string" minOccurs="0"/>
+<xs:element name="post" type="xs:string" minOccurs="0"/>
+<xs:element name="ueeligibility" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addExperienceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateExperience">
+<xs:sequence>
+<xs:element name="expObj" type="tns:experience" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateExperienceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteJob">
+<xs:sequence>
+<xs:element name="jobObj" type="tns:job" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteJobResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserInformation">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+<xs:element name="jobObj" type="tns:job" minOccurs="0"/>
+<xs:element name="qualificationsObj" type="tns:qualifications" minOccurs="0"/>
+<xs:element name="expObj" type="tns:experience" minOccurs="0"/>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addUserInformationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteUser">
+<xs:sequence>
+<xs:element name="userObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getExpInfo">
+<xs:sequence>
+<xs:element name="expObj" type="tns:experience" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getExpInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:experience" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQualificationsInfo">
+<xs:sequence>
+<xs:element name="qualificationObj" type="tns:qualifications" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQualificationsInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:qualifications" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantExp">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantExpResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:experience" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJobInfo">
+<xs:sequence>
+<xs:element name="appObj" type="tns:job" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJobInfoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:job" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicants">
+<xs:sequence>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getApplicantsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:applicants" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteQualifications">
+<xs:sequence>
+<xs:element name="qualificationsObj" type="tns:qualifications" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteQualificationsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginUser">
+<xs:sequence>
+<xs:element name="userObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSkills">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateSkillsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addQualifications">
+<xs:sequence>
+<xs:element name="quaObj" type="tns:qualifications" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addQualificationsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserEvaluationAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUserEvaluationAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:job" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSkills">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addSkillsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteExp">
+<xs:sequence>
+<xs:element name="expObj" type="tns:experience" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteExpResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginAdmin">
+<xs:sequence>
+<xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addJob">
+<xs:sequence>
+<xs:element name="jobObj" type="tns:job" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addJobResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

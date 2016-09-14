@@ -30,7 +30,7 @@
                   <div id=transparent>
                      <h1>User Registration</h1>
                   </div>
-                  <form method="Post" action="AddAdminConfirm.jsp">
+                  <form method="Post" action="/registerUser">
                      <table width="200" border="0" cellpadding="5">
                         <tr>
                            <td><label for="txtUsername"> Username </label></td>
@@ -56,10 +56,7 @@
             <td><input type='text' name='txtName' placeholder="enter Name" class="form-control"
                id='txtName' required> </input></td>
             </tr>
-            <tr>
-            <td><label for="txtAddress"> Address</label></td>
-            <td><input type='text' name='txtAddress' class="form-control" placeholder="enter Address" id='txtAddress' required> </input></td>
-            </tr>
+           
             <tr>
             <td><label for="txtNICNo"> NICNo </label></td>
             <td><input type='text' name='txtNICNo' class="form-control" placeholder="enter NICNo" id='txtNICNo' required> </input></td>

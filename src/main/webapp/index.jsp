@@ -1,7 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-   
+<%@page import="PLMethods.presentationLayerMethods"%>
+<%@page import="businessoperationslayer.Job"%>
+<%@page language="java"%>
+
     <!DOCTYPE html>
-<doctype html>
+
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -43,14 +45,28 @@
        <div class="col-md-6 col-sm-3 panel-group"  >
          <div class="panel panel-info">
                 <div class="panel-body">
-                    <h4>
+                    
+                    <h2 >
                         Available Vacancies 
-                    </h4>
-                 </div>
+                    </h2>
+                        <%
+                            presentationLayerMethods p = new presentationLayerMethods();
+                            Job job = new Job();
+                            job.setJobid(1); %>
+                            <p  > <h4 class="bg-info"> <%
+                            out.print(p.getJobInfo(job).get(0).getName());
+                            %>
+                            </h4>
+                            </p>
+                           <p  >
+                            <%
+                            out.print(p.getJobInfo(job).get(0).getJobDescription());
+                            %>
+                           </p>
         </div>
     </div>
 
-
+</div>
 	
 
 
