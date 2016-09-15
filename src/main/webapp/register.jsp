@@ -19,7 +19,7 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-md-9 col-sm-5" id="welcome2">InGrow Job Application Management</div>
+           <jsp:include page="ingrowHeader.jsp" />
         
          </div>
          <div id=bodyleft>

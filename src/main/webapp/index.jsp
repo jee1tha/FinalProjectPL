@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <script type=\"text/javascript\"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<div class="container">
@@ -22,11 +23,28 @@
         <div class="col-md-12 col-sm-6" id=welcome1>
 		<marquee>Welcome to InGrow. Your Automated Applicant Ranking System.</marquee>
         </div>
+            
         </div>
+            <% if(session.getAttribute("registration") !=null){
+                String reg = (String)session.getAttribute("registration");;
+                if(reg != null){
+                if (reg == "successful" ){  
+                    %>
+                   
+                    <Script >alert('Registration successful. Please Login'); </Script>
+                    
+                     
+                    <%  }  else{
+%>
+                         <Script > alert('Registration Failed. Please Try again'); </Script>
+ <% }    
+}
+                        }
+%>
     <div class="row">
-	<div class="col-md-12 col-sm-6 text-center" id= "welcome2">  InGrow - Intelligent Growth </div>
+	
     
-
+        <jsp:include page="ingrowHeader.jsp" />
       
       
     </div>
@@ -39,6 +57,7 @@
         <div class="col-md-6 col-sm-3 panel-group"  >
              <div class="panel panel-info">
                  <div class="panel-body"> <h3> What is Project InGrow?</h3> </div>
+                 ${username}
              </div>
            
          </div>

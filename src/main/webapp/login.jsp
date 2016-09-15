@@ -19,10 +19,13 @@
         </div>
         </div>
 
-	<div id=welcome2>InGrow</div>
+	   <div class="row">
+           <jsp:include page="ingrowHeader.jsp" />
+        
+         </div>
 	</td>
 
-
+ 
 	  <jsp:include page="nav.jsp" />
     <div class="col-md-12 col-sm-6" >     
     <form method="Post "  >
