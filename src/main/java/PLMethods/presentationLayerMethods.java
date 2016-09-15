@@ -6,6 +6,7 @@ import businessoperationslayer.Experience;
 import businessoperationslayer.Job;
 import businessoperationslayer.Qualifications;
 import businessoperationslayer.Skills;
+import businessoperationslayer.Users;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.chainsaw.Main;
@@ -46,9 +47,9 @@ public class presentationLayerMethods {
         return proxy.deleteUser(app);
     }
 
-    public String LoginUser(Applicants app) {
+    public String LoginUser(Users user) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
-        return proxy.loginUser(app);
+        return proxy.loginUser(user);
     }
 
 

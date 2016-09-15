@@ -4,9 +4,17 @@
         <servlet-name>registerUserServlet</servlet-name>
         <servlet-class>PLMethods.registerUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>PLMethods.loginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUserServlet</servlet-name>
         <url-pattern>/registerUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
