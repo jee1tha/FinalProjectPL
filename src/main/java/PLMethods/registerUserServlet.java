@@ -8,9 +8,7 @@ package PLMethods;
 import businessoperationslayer.Applicants;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.jws.WebService;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author VABAYJE
  */
-@WebServlet(urlPatterns = "/registerUser")
-public class indexServlet extends HttpServlet {
+public class registerUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +32,19 @@ public class indexServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet indexServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet indexServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try { 
+           Applicants app = new Applicants();
+       app.setUsername(request.getParameter("txtUsername"));
+       app.setName(request.getParameter("txtName"));
+       app.setPassword(request.getParameter("txtPassword"));
+       app.setNicNo(request.getParameter("txtNICNo"));
+       app.setEmail(request.getParameter("txtEmail"));
+       app.setContactNo(request.getParameter("txtContactNo"));
+       app.setBirthDate(request.getParameter("txtbday"));
+       app.setRole("User");
+       presentationLayerMethods p = new presentationLayerMethods();
+       int r = p.RegisterUser(app);
+       request.getRequestDispatcher("/zzz.jsp").forward(request, response);;
         } finally {
             out.close();
         }
@@ -77,17 +76,7 @@ public class indexServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       Applicants app = new Applicants();
-       app.setUsername(request.getParameter("txtUsername"));
-       app.setName(request.getParameter("txtName"));
-       app.setPassword(request.getParameter("txtPassword"));
-       app.setNicNo(request.getParameter("txtNICNo"));
-       app.setEmail(request.getParameter("txtEmail"));
-       app.setContactNo(request.getParameter("txtContactNo"));
-       
-       presentationLayerMethods p = new presentationLayerMethods();
-       int r = p.RegisterUser(app);
-       request.getRequestDispatcher("/WEB-INF/zzz.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
