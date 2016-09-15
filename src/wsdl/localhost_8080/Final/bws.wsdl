@@ -76,17 +76,17 @@
 <message name="addUserInformationResponse">
 <part name="parameters" element="tns:addUserInformationResponse"/>
 </message>
-<message name="RegisterAdmin">
-<part name="parameters" element="tns:RegisterAdmin"/>
-</message>
-<message name="RegisterAdminResponse">
-<part name="parameters" element="tns:RegisterAdminResponse"/>
-</message>
 <message name="RegisterUser">
 <part name="parameters" element="tns:RegisterUser"/>
 </message>
 <message name="RegisterUserResponse">
 <part name="parameters" element="tns:RegisterUserResponse"/>
+</message>
+<message name="RegisterAdmin">
+<part name="parameters" element="tns:RegisterAdmin"/>
+</message>
+<message name="RegisterAdminResponse">
+<part name="parameters" element="tns:RegisterAdminResponse"/>
 </message>
 <message name="deleteAdmin">
 <part name="parameters" element="tns:deleteAdmin"/>
@@ -105,12 +105,6 @@
 </message>
 <message name="LoginUserResponse">
 <part name="parameters" element="tns:LoginUserResponse"/>
-</message>
-<message name="LoginAdmin">
-<part name="parameters" element="tns:LoginAdmin"/>
-</message>
-<message name="LoginAdminResponse">
-<part name="parameters" element="tns:LoginAdminResponse"/>
 </message>
 <message name="addSkills">
 <part name="parameters" element="tns:addSkills"/>
@@ -233,13 +227,13 @@
 <input wsam:Action="http://businessOperationsLayer/bws/addUserInformationRequest" message="tns:addUserInformation"/>
 <output wsam:Action="http://businessOperationsLayer/bws/addUserInformationResponse" message="tns:addUserInformationResponse"/>
 </operation>
-<operation name="RegisterAdmin">
-<input wsam:Action="http://businessOperationsLayer/bws/RegisterAdminRequest" message="tns:RegisterAdmin"/>
-<output wsam:Action="http://businessOperationsLayer/bws/RegisterAdminResponse" message="tns:RegisterAdminResponse"/>
-</operation>
 <operation name="RegisterUser">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterUserRequest" message="tns:RegisterUser"/>
 <output wsam:Action="http://businessOperationsLayer/bws/RegisterUserResponse" message="tns:RegisterUserResponse"/>
+</operation>
+<operation name="RegisterAdmin">
+<input wsam:Action="http://businessOperationsLayer/bws/RegisterAdminRequest" message="tns:RegisterAdmin"/>
+<output wsam:Action="http://businessOperationsLayer/bws/RegisterAdminResponse" message="tns:RegisterAdminResponse"/>
 </operation>
 <operation name="deleteAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/deleteAdminRequest" message="tns:deleteAdmin"/>
@@ -252,10 +246,6 @@
 <operation name="LoginUser">
 <input wsam:Action="http://businessOperationsLayer/bws/LoginUserRequest" message="tns:LoginUser"/>
 <output wsam:Action="http://businessOperationsLayer/bws/LoginUserResponse" message="tns:LoginUserResponse"/>
-</operation>
-<operation name="LoginAdmin">
-<input wsam:Action="http://businessOperationsLayer/bws/LoginAdminRequest" message="tns:LoginAdmin"/>
-<output wsam:Action="http://businessOperationsLayer/bws/LoginAdminResponse" message="tns:LoginAdminResponse"/>
 </operation>
 <operation name="addSkills">
 <input wsam:Action="http://businessOperationsLayer/bws/addSkillsRequest" message="tns:addSkills"/>
@@ -416,7 +406,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="RegisterAdmin">
+<operation name="RegisterUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -425,7 +415,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="RegisterUser">
+<operation name="RegisterAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -453,15 +443,6 @@
 </output>
 </operation>
 <operation name="LoginUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="LoginAdmin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

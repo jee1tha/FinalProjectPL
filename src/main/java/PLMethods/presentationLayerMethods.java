@@ -46,15 +46,11 @@ public class presentationLayerMethods {
         return proxy.deleteUser(app);
     }
 
-    public int LoginUser(Applicants app) {
+    public String LoginUser(Applicants app) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.loginUser(app);
     }
 
-    public int LoginAdmin(Admin admin) {
-        Bws proxy = SingletonCon.getInstance().getBwsPort();
-        return proxy.loginAdmin(admin);
-    }
 
     public int addSkills(Skills skill) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
