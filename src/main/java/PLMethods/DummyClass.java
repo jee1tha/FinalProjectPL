@@ -2,6 +2,7 @@ package PLMethods;
 
 import PLMethods.presentationLayerMethods;
 import businessoperationslayer.Applicants;
+import businessoperationslayer.Users;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,19 +16,24 @@ import businessoperationslayer.Applicants;
  */
 public class DummyClass {
     public static void main(String[] args) {
-//    presentationLayerMethods p = new presentationLayerMethods();
+    presentationLayerMethods p = new presentationLayerMethods();
 //   
 //    System.out.print(p.getUserEvaluationAll().get(0).getFinalScore());
 
-   Applicants app = new Applicants();
-       app.setUsername("registerUserServlet");
-       app.setName("registerUserServlet");
-       app.setPassword("registerUserServlet");
-       app.setNicNo("registerUserServlet");
-       app.setEmail("registerUserServlet@qwe");
-       app.setContactNo("123123123");
-       app.setRole("User");
-       presentationLayerMethods p = new presentationLayerMethods();
-        System.out.println(p.RegisterUser(app));
+//   Applicants app = new Applicants();
+//       app.setUsername("registerUserServlet");
+//       app.setName("registerUserServlet");
+//       app.setPassword("registerUserServlet");
+//       app.setNicNo("registerUserServlet");
+//       app.setEmail("registerUserServlet@qwe");
+//       app.setContactNo("123123123");
+//       app.setRole("User");
+//       presentationLayerMethods p = new presentationLayerMethods();
+//        System.out.println(p.RegisterUser(app));
+
+    Users user= new Users();
+    user.setUsername("jeewantha");
+    user.setPassword("passwoard");
+System.out.print(p.LoginUser(user));
     }
 }

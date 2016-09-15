@@ -9,6 +9,22 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link href="home.css" rel="stylesheet" type="text/css" />
    </head>
+     <% if(session.getAttribute("registration") !=null){
+                String reg = (String)session.getAttribute("registration");;
+                if(reg != null){
+                if (reg == "successful" ){  
+                    %>
+                   
+                    <Script >alert('Registration successful. Please Login'); </Script>
+                    
+                     
+                    <%   session.setAttribute("registration", null);}  else{
+%>
+                         <Script > alert('Registration Failed. Please Try again'); </Script>
+ <% session.setAttribute("registration", null); }    
+}
+                        }
+%>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    <body>

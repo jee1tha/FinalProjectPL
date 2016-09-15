@@ -15,6 +15,39 @@
 </head>
 
 <body>
+     <% if(session.getAttribute("registration") !=null){
+                String reg = (String)session.getAttribute("registration");;
+                if(reg != null){
+                if (reg == "successful" ){  
+                    %>
+                   
+                    <Script >alert('Registration successful. Please Login'); </Script>
+                    
+                     
+                    <%  session.setAttribute("registration", null);}  else{
+%>
+                         <Script > alert('Registration Failed. Please Try again'); </Script>
+ <% session.setAttribute("registration", null);}    
+}
+                        }
+%>
+                              <% if(session.getAttribute("username") !=null){
+                String username = (String)session.getAttribute("username");;
+              
+                if (username != null ){  
+                    %>
+                   
+                    <Script >alert('Login successful'); </Script>
+                    
+                     
+                    <%  }  else{
+%>
+                         <Script > alert('Login Failed. Please Try again'); 
+                         window.location = "login.jsp";</Script>
+ <% }    
+
+                        }
+%>
     <script type=\"text/javascript\"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -25,22 +58,7 @@
         </div>
             
         </div>
-            <% if(session.getAttribute("registration") !=null){
-                String reg = (String)session.getAttribute("registration");;
-                if(reg != null){
-                if (reg == "successful" ){  
-                    %>
-                   
-                    <Script >alert('Registration successful. Please Login'); </Script>
-                    
-                     
-                    <%  }  else{
-%>
-                         <Script > alert('Registration Failed. Please Try again'); </Script>
- <% }    
-}
-                        }
-%>
+          
     <div class="row">
 	
     

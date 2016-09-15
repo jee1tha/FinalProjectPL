@@ -66,14 +66,17 @@ public class registerUserServlet extends HttpServlet {
             String registration = null;
             if (r == 1) {
                 registration = "successful";
+                     HttpSession session = request.getSession(true);
+                    session.setAttribute("registration", registration);
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             } else {
                 registration = "failed";
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                  HttpSession session = request.getSession(true);
+            session.setAttribute("registration", registration);
+                 request.getRequestDispatcher("/register.jsp").forward(request, response);
             }
 
-            HttpSession session = request.getSession(true);
-            session.setAttribute("registration", registration);
+          
             
         } finally {
             out.close();
