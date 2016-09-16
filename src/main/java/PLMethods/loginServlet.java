@@ -101,7 +101,7 @@ public class loginServlet extends HttpServlet {
                     session.setAttribute("name", name);
                     session.setAttribute("NicNo", NicNo);
                     session.setAttribute("username", username);    
-                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);
                 }
                 else if (r.equals("admin") || r.equals("masteradmin")) {
                       
@@ -123,7 +123,7 @@ public class loginServlet extends HttpServlet {
                     session.setAttribute("name", name);
                     session.setAttribute("EmpNo", EmpNo);
                     session.setAttribute("username", username);    
-                    request.getRequestDispatcher("/index.jsp").forward(request, response);       
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);       
                 }
 
             }

@@ -10,17 +10,36 @@
   <% if((String)session.getAttribute("registration") !=null){
                 String reg = (String)session.getAttribute("registration");;
                 if(reg != null){
-                if (reg == "successful" ){  
+                if (reg  == "successful" || reg == "adminsuccessful"){  
+                	if(reg == "adminsuccessful"){
                     %>
                    
-                    <Script >alert('Registration successful. Please Login'); </Script>
+                    <Script >alert('Admin Successfully Added'); 
+                    window.location = "index.jsp";</Script>
                     
                      
-                    <%  session.setAttribute("registration", null); }  else{
+                    <%  session.setAttribute("registration", null); }
+                	else {
+                    %>
+                    
+                    <Script >alert('Registration successful. Please Login'); 
+                    window.location = "login.jsp";</Script>
+                    
+                     
+                    <%  session.setAttribute("registration", null);}
+                	} else{
+                		if(reg=="adminfailed"){
 %>
-                         <Script > alert('Registration Failed. Please Try again'); </Script>
- <%  session.setAttribute("registration", null);}    
+                         <Script > alert('Registration Failed. Please Try again');
+                         window.location = "adminRegister.jsp";</Script>
+ <%  session.setAttribute("registration", null);}   else{
+	 %>
+     <Script > alert('Registration Failed. Please Try again');
+     window.location = "register.jsp";</Script>
+<%  session.setAttribute("registration", null);
+ }
 }
+                }
                         }
 %>
                                                   <% if(session.getAttribute("username") !=null){
