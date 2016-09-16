@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package PLMethods;
+import businessoperationslayer.Admin;
 import java.security.MessageDigest;
 import businessoperationslayer.Applicants;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author VABAYJE
  */
-public class registerUserServlet extends HttpServlet {
+public class registerAdminServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -51,26 +52,25 @@ public class registerUserServlet extends HttpServlet {
        
             } catch (Exception e) {
             }
-            Applicants app = new Applicants();
-            app.setUsername(request.getParameter("txtUsername"));
-            app.setName(request.getParameter("txtName"));
-            app.setPassword(stringbuff.toString());
-            app.setNicNo(request.getParameter("txtNICNo"));
-            app.setEmail(request.getParameter("txtEmail"));
-            app.setContactNo(request.getParameter("txtContactNo"));
-            app.setBirthDate(request.getParameter("txtbday"));
-            app.setRole("User");
+            Admin obj = new Admin();
+            obj.setUsername(request.getParameter("txtUsername"));
+            obj.setName(request.getParameter("txtName"));
+            obj.setPassword(stringbuff.toString());
+            obj.setEmpNo(request.getParameter("txtEmpNo"));
+            obj.setEmail(request.getParameter("txtEmail"));
+            obj.setContactNo(request.getParameter("txtContactNo"));
+            obj.setRole(request.getParameter("role"));
 
             presentationLayerMethods p = new presentationLayerMethods();
-            int r = p.RegisterUser(app);
+            int r = p.RegisterAdmin(obj);
             String registration = null;
             if (r == 1) {
-                registration = "successful";
+                registration = "adminsuccessful";
                      HttpSession session = request.getSession(true);
                     session.setAttribute("registration", registration);
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             } else {
-                registration = "failed";
+                registration = "adminfailed";
                   HttpSession session = request.getSession(true);
             session.setAttribute("registration", registration);
                  request.getRequestDispatcher("/login.jsp").forward(request, response);

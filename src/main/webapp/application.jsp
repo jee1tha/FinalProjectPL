@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
     <!DOCTYPE html>
 <html>
    <head>
@@ -7,6 +6,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title> Job Application </title>
+
    </head>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -25,13 +25,14 @@
          </div>
             <jsp:include page="nav.jsp" />
          </td>
+        
          <div id=bodymid>
-            <form id="userinformationform" method="Post" action="CheckAdminLogin.jsp">
+            <form id="userinformationform" method="Post" action="applicationServlet">
                <div class="col-md-6 col-sm-3 ">
                   <div class="panel-group"  >
                      <div class="panel panel-info">
                         <div class="panel-body">
-                           <h1>Add Skills</h1>
+                           <h1>Add Skills  ${sessionScope.appID}</h1>
                            <p>
                               Skill 1  <input type='text'  class="form-control" name='txtSkill1'
                                  placeholder="enter Skill 1" id='txtSkill1' required> </input> 
@@ -106,9 +107,9 @@
                            </div>
                            <div class=" col-md-4 col-sm-2 ">
                               <p>
-                                 <label for="txtDuration"> Final Grade </label>
-                                 <input type='text' name='txtDuration'
-                                    placeholder="enter Final Grade " class="form-control" id='txtDuration' required> </input>
+                                 <label for="txtClass"> Final Grade </label>
+                                 <input type='text' name='txtClass'
+                                    placeholder="enter Final Grade " class="form-control" id='txtClass' required> </input>
                               </p>
                            </div>
                         </div>

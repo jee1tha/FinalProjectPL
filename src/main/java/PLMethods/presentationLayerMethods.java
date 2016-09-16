@@ -31,6 +31,11 @@ public class presentationLayerMethods {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.registerUser(app);
     }
+    
+     public boolean checkUserJob(Job job,Applicants app) {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.checkUserJob(job,app);
+    }
 
     public int RegisterAdmin(Admin admin) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();

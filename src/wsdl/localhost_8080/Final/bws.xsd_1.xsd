@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.10 svn-revision#919b322c92f13ad085a933e8dd6dd35d4947364b. --><xs:schema xmlns:tns="http://businessOperationsLayer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://businessOperationsLayer/">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://businessOperationsLayer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://businessOperationsLayer/">
 
 <xs:element name="LoginUser" type="tns:LoginUser"/>
 
@@ -31,6 +31,10 @@
 <xs:element name="addUserInformation" type="tns:addUserInformation"/>
 
 <xs:element name="addUserInformationResponse" type="tns:addUserInformationResponse"/>
+
+<xs:element name="checkUserJob" type="tns:checkUserJob"/>
+
+<xs:element name="checkUserJobResponse" type="tns:checkUserJobResponse"/>
 
 <xs:element name="deleteAdmin" type="tns:deleteAdmin"/>
 
@@ -106,6 +110,8 @@
 
 <xs:element name="job" type="tns:job"/>
 
+<xs:element name="skills" type="tns:skills"/>
+
 <xs:element name="updateExperience" type="tns:updateExperience"/>
 
 <xs:element name="updateExperienceResponse" type="tns:updateExperienceResponse"/>
@@ -167,10 +173,10 @@
 
 <xs:complexType name="skills">
 <xs:sequence>
-<xs:element name="seligibility" type="xs:boolean"/>
-<xs:element name="skill" type="xs:string" minOccurs="0"/>
 <xs:element name="skillID" type="xs:int"/>
-<xs:element name="skillName" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="skillName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="skill" type="xs:string" minOccurs="0"/>
+<xs:element name="seligibility" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -196,18 +202,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="deleteskill">
-<xs:sequence>
-<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteskillResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="deleteAdmin">
 <xs:sequence>
 <xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
@@ -226,6 +220,18 @@
 </xs:complexType>
 
 <xs:complexType name="deleteAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteskill">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteskillResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
 </xs:sequence>
@@ -484,6 +490,19 @@
 <xs:complexType name="updateSkillsResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUserJob">
+<xs:sequence>
+<xs:element name="jobObj" type="tns:job" minOccurs="0"/>
+<xs:element name="appObj" type="tns:applicants" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkUserJobResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -31,23 +31,7 @@
 }
                         }
 %>
-                              <% if(session.getAttribute("username") !=null){
-                String username = (String)session.getAttribute("username");;
-              
-                if (username != null ){  
-                    %>
-                   
-                    <Script >alert('Login successful'); </Script>
-                    
-                     
-                    <%  }  else{
-%>
-                         <Script > alert('Login Failed. Please Try again'); 
-                         window.location = "login.jsp";</Script>
- <% }    
-
-                        }
-%>
+        
     <script type=\"text/javascript\"> </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

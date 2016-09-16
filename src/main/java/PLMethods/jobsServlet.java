@@ -1,11 +1,13 @@
+package PLMethods;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PLMethods;
-import java.security.MessageDigest;
+
 import businessoperationslayer.Applicants;
+import businessoperationslayer.Job;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author VABAYJE
  */
-public class registerUserServlet extends HttpServlet {
+public class jobsServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,50 +36,22 @@ public class registerUserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            StringBuffer stringbuff = new StringBuffer();
-            try {
-                String password = request.getParameter("txtPassword");
-                MessageDigest messageD = MessageDigest.getInstance("MD5");
-                messageD.update(password.getBytes());
-
-                byte byteData[] = messageD.digest();
-
-                 //converting the byte to hex format 
-                  
-                 for (int i = 0; i < byteData.length; i++) {
-                 stringbuff.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-                }
-
-       
-            } catch (Exception e) {
-            }
-            Applicants app = new Applicants();
-            app.setUsername(request.getParameter("txtUsername"));
-            app.setName(request.getParameter("txtName"));
-            app.setPassword(stringbuff.toString());
-            app.setNicNo(request.getParameter("txtNICNo"));
-            app.setEmail(request.getParameter("txtEmail"));
-            app.setContactNo(request.getParameter("txtContactNo"));
-            app.setBirthDate(request.getParameter("txtbday"));
-            app.setRole("User");
-
-            presentationLayerMethods p = new presentationLayerMethods();
-            int r = p.RegisterUser(app);
-            String registration = null;
-            if (r == 1) {
-                registration = "successful";
-                     HttpSession session = request.getSession(true);
-                    session.setAttribute("registration", registration);
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
-            } else {
-                registration = "failed";
-                  HttpSession session = request.getSession(true);
-            session.setAttribute("registration", registration);
-                 request.getRequestDispatcher("/login.jsp").forward(request, response);
-            }
-
-          
+           String n = request.getParameter("jobid");
+           Job job = new Job();
+           job.setJobid(Integer.parseInt(n));
+           Applicants app = new Applicants();
             
+            app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
+            
+            presentationLayerMethods pl = new presentationLayerMethods();
+            boolean result = pl.checkUserJob(job, app);
+           HttpSession session = request.getSession(true);
+                    session.setAttribute("jobid", n);
+                    if(result == false){
+                     request.getRequestDispatcher("/application.jsp").forward(request, response);
+                    }else {
+                         request.getRequestDispatcher("/jobdenied.jsp").forward(request, response);
+                    }
         } finally {
             out.close();
         }

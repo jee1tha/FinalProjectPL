@@ -1,13 +1,19 @@
+package PLMethods;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PLMethods;
-import java.security.MessageDigest;
 import businessoperationslayer.Applicants;
+import businessoperationslayer.Experience;
+import businessoperationslayer.Job;
+import businessoperationslayer.Qualifications;
+import businessoperationslayer.Skills;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author VABAYJE
  */
-public class registerUserServlet extends HttpServlet {
+public class applicationServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,56 +37,42 @@ public class registerUserServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+
+        int appid = 0;
+        String user = null;
         try {
-            StringBuffer stringbuff = new StringBuffer();
-            try {
-                String password = request.getParameter("txtPassword");
-                MessageDigest messageD = MessageDigest.getInstance("MD5");
-                messageD.update(password.getBytes());
-
-                byte byteData[] = messageD.digest();
-
-                 //converting the byte to hex format 
-                  
-                 for (int i = 0; i < byteData.length; i++) {
-                 stringbuff.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-                }
-
-       
-            } catch (Exception e) {
-            }
             Applicants app = new Applicants();
-            app.setUsername(request.getParameter("txtUsername"));
-            app.setName(request.getParameter("txtName"));
-            app.setPassword(stringbuff.toString());
-            app.setNicNo(request.getParameter("txtNICNo"));
-            app.setEmail(request.getParameter("txtEmail"));
-            app.setContactNo(request.getParameter("txtContactNo"));
-            app.setBirthDate(request.getParameter("txtbday"));
-            app.setRole("User");
+            user = (String) request.getSession().getAttribute("username");
+            app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
 
-            presentationLayerMethods p = new presentationLayerMethods();
-            int r = p.RegisterUser(app);
-            String registration = null;
-            if (r == 1) {
-                registration = "successful";
-                     HttpSession session = request.getSession(true);
-                    session.setAttribute("registration", registration);
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
-            } else {
-                registration = "failed";
-                  HttpSession session = request.getSession(true);
-            session.setAttribute("registration", registration);
-                 request.getRequestDispatcher("/login.jsp").forward(request, response);
-            }
+            Skills skill = new Skills();
 
-          
+            skill.getSkillName().add(request.getParameter("txtSkill1"));
+            skill.getSkillName().add(request.getParameter("txtSkill2"));
+            skill.getSkillName().add(request.getParameter("txtSkill3"));
+            skill.getSkillName().add(request.getParameter("txtSkill4"));
+            skill.getSkillName().add(request.getParameter("txtSkill5"));
             
-        } finally {
-            out.close();
+            Qualifications qua = new Qualifications();
+            qua.setInstitute(request.getParameter("txtInstitute"));
+            qua.setName(request.getParameter("txtQualification"));
+            qua.setQClass(request.getParameter("txtClass"));
+            
+            Experience exp = new Experience();
+            exp.setOrganization(request.getParameter("txtOrganization"));
+            exp.setPost(request.getParameter("txtPost"));
+            exp.setDuration(1);
+            
+            Job job = new Job();
+            job.setJobid(1);
+            presentationLayerMethods pm = new presentationLayerMethods();
+            int r =pm.addUserInformation(app, job, qua, exp, skill) ;
+            System.out.print(user);
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
