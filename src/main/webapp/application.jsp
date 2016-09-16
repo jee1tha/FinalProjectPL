@@ -107,9 +107,9 @@
                            </div>
                            <div class=" col-md-4 col-sm-2 ">
                               <p>
-                                 <label for="txtDuration"> Final Grade </label>
-                                 <input type='text' name='txtDuration'
-                                    placeholder="enter Final Grade " class="form-control" id='txtDuration' required> </input>
+                                 <label for="txtClass"> Final Grade </label>
+                                 <input type='text' name='txtClass'
+                                    placeholder="enter Final Grade " class="form-control" id='txtClass' required> </input>
                               </p>
                            </div>
                         </div>

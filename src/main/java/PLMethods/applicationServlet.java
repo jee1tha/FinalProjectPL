@@ -5,10 +5,15 @@ package PLMethods;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import businessoperationslayer.Applicants;
+import businessoperationslayer.Experience;
+import businessoperationslayer.Job;
+import businessoperationslayer.Qualifications;
+import businessoperationslayer.Skills;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,22 +37,42 @@ public class applicationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        int appid =0;
-                  String user = null;   
-        try {    
+
+        int appid = 0;
+        String user = null;
+        try {
             Applicants app = new Applicants();
-             user= (String) request.getSession().getAttribute("username");
-        app.setAppID( Integer.parseInt(request.getSession().getAttribute("appID").toString()));
-       
-        
-                                 System.out.print(user);
-        } catch (Exception e){
-           
-      e.printStackTrace();
+            user = (String) request.getSession().getAttribute("username");
+            app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
+
+            Skills skill = new Skills();
+
+            skill.getSkillName().add(request.getParameter("txtSkill1"));
+            skill.getSkillName().add(request.getParameter("txtSkill2"));
+            skill.getSkillName().add(request.getParameter("txtSkill3"));
+            skill.getSkillName().add(request.getParameter("txtSkill4"));
+            skill.getSkillName().add(request.getParameter("txtSkill5"));
+            
+            Qualifications qua = new Qualifications();
+            qua.setInstitute(request.getParameter("txtInstitute"));
+            qua.setName(request.getParameter("txtQualification"));
+            qua.setQClass(request.getParameter("txtClass"));
+            
+            Experience exp = new Experience();
+            exp.setOrganization(request.getParameter("txtOrganization"));
+            exp.setPost(request.getParameter("txtPost"));
+            exp.setDuration(1);
+            
+            Job job = new Job();
+            job.setJobid(1);
+            presentationLayerMethods pm = new presentationLayerMethods();
+            int r =pm.addUserInformation(app, job, qua, exp, skill) ;
+            System.out.print(user);
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
-        
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

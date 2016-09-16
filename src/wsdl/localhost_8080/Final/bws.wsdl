@@ -4,11 +4,11 @@
 <xsd:import namespace="http://businessOperationsLayer/" schemaLocation="http://localhost:8080/Final/bws?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="RegisterUser">
-<part name="parameters" element="tns:RegisterUser"/>
+<message name="checkUserJob">
+<part name="parameters" element="tns:checkUserJob"/>
 </message>
-<message name="RegisterUserResponse">
-<part name="parameters" element="tns:RegisterUserResponse"/>
+<message name="checkUserJobResponse">
+<part name="parameters" element="tns:checkUserJobResponse"/>
 </message>
 <message name="RegisterAdmin">
 <part name="parameters" element="tns:RegisterAdmin"/>
@@ -16,11 +16,11 @@
 <message name="RegisterAdminResponse">
 <part name="parameters" element="tns:RegisterAdminResponse"/>
 </message>
-<message name="checkUserJob">
-<part name="parameters" element="tns:checkUserJob"/>
+<message name="RegisterUser">
+<part name="parameters" element="tns:RegisterUser"/>
 </message>
-<message name="checkUserJobResponse">
-<part name="parameters" element="tns:checkUserJobResponse"/>
+<message name="RegisterUserResponse">
+<part name="parameters" element="tns:RegisterUserResponse"/>
 </message>
 <message name="deleteAdmin">
 <part name="parameters" element="tns:deleteAdmin"/>
@@ -185,17 +185,17 @@
 <part name="parameters" element="tns:addUserInformationResponse"/>
 </message>
 <portType name="bws">
-<operation name="RegisterUser">
-<input wsam:Action="http://businessOperationsLayer/bws/RegisterUserRequest" message="tns:RegisterUser"/>
-<output wsam:Action="http://businessOperationsLayer/bws/RegisterUserResponse" message="tns:RegisterUserResponse"/>
+<operation name="checkUserJob">
+<input wsam:Action="http://businessOperationsLayer/bws/checkUserJobRequest" message="tns:checkUserJob"/>
+<output wsam:Action="http://businessOperationsLayer/bws/checkUserJobResponse" message="tns:checkUserJobResponse"/>
 </operation>
 <operation name="RegisterAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterAdminRequest" message="tns:RegisterAdmin"/>
 <output wsam:Action="http://businessOperationsLayer/bws/RegisterAdminResponse" message="tns:RegisterAdminResponse"/>
 </operation>
-<operation name="checkUserJob">
-<input wsam:Action="http://businessOperationsLayer/bws/checkUserJobRequest" message="tns:checkUserJob"/>
-<output wsam:Action="http://businessOperationsLayer/bws/checkUserJobResponse" message="tns:checkUserJobResponse"/>
+<operation name="RegisterUser">
+<input wsam:Action="http://businessOperationsLayer/bws/RegisterUserRequest" message="tns:RegisterUser"/>
+<output wsam:Action="http://businessOperationsLayer/bws/RegisterUserResponse" message="tns:RegisterUserResponse"/>
 </operation>
 <operation name="deleteAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/deleteAdminRequest" message="tns:deleteAdmin"/>
@@ -308,7 +308,7 @@
 </portType>
 <binding name="bwsPortBinding" type="tns:bws">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="RegisterUser">
+<operation name="checkUserJob">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -326,7 +326,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="checkUserJob">
+<operation name="RegisterUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

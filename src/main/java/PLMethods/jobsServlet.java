@@ -6,6 +6,8 @@ package PLMethods;
  * and open the template in the editor.
  */
 
+import businessoperationslayer.Applicants;
+import businessoperationslayer.Job;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,9 +37,21 @@ public class jobsServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
            String n = request.getParameter("jobid");
+           Job job = new Job();
+           job.setJobid(Integer.parseInt(n));
+           Applicants app = new Applicants();
+            
+            app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
+            
+            presentationLayerMethods pl = new presentationLayerMethods();
+            boolean result = pl.checkUserJob(job, app);
            HttpSession session = request.getSession(true);
                     session.setAttribute("jobid", n);
+                    if(result == false){
                      request.getRequestDispatcher("/application.jsp").forward(request, response);
+                    }else {
+                         request.getRequestDispatcher("/jobdenied.jsp").forward(request, response);
+                    }
         } finally {
             out.close();
         }
