@@ -110,6 +110,8 @@
 
 <xs:element name="job" type="tns:job"/>
 
+<xs:element name="skills" type="tns:skills"/>
+
 <xs:element name="updateExperience" type="tns:updateExperience"/>
 
 <xs:element name="updateExperienceResponse" type="tns:updateExperienceResponse"/>
@@ -171,10 +173,10 @@
 
 <xs:complexType name="skills">
 <xs:sequence>
-<xs:element name="seligibility" type="xs:boolean"/>
-<xs:element name="skill" type="xs:string" minOccurs="0"/>
 <xs:element name="skillID" type="xs:int"/>
-<xs:element name="skillName" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="skillName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="skill" type="xs:string" minOccurs="0"/>
+<xs:element name="seligibility" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

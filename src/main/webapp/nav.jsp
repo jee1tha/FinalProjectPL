@@ -43,7 +43,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="viewApplicants.jsp">View Applicants</a></li>
+                <li><a href="ViewApplicants.jsp">View Applicants</a></li>
                 <li><a href="job.jsp">Jobs</a></li>
                 <li><a href="about.jsp">About</a></li>
 
@@ -66,8 +66,8 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="viewApplicants.jsp">View Applicants</a></li>
-                <li><a href="job.jsp">Jobs</a></li>
+                <li><a href="ViewApplicants.jsp">View Applicants</a></li>
+                <li><a href="jobs.jsp">Jobs</a></li>
                 <li><a href="about.jsp">About</a></li>
 
             </ul>
