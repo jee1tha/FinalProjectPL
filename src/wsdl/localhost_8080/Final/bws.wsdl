@@ -4,12 +4,6 @@
 <xsd:import namespace="http://businessOperationsLayer/" schemaLocation="http://localhost:8080/Final/bws?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="checkUserJob">
-<part name="parameters" element="tns:checkUserJob"/>
-</message>
-<message name="checkUserJobResponse">
-<part name="parameters" element="tns:checkUserJobResponse"/>
-</message>
 <message name="RegisterAdmin">
 <part name="parameters" element="tns:RegisterAdmin"/>
 </message>
@@ -21,6 +15,12 @@
 </message>
 <message name="RegisterUserResponse">
 <part name="parameters" element="tns:RegisterUserResponse"/>
+</message>
+<message name="checkUserJob">
+<part name="parameters" element="tns:checkUserJob"/>
+</message>
+<message name="checkUserJobResponse">
+<part name="parameters" element="tns:checkUserJobResponse"/>
 </message>
 <message name="deleteAdmin">
 <part name="parameters" element="tns:deleteAdmin"/>
@@ -94,6 +94,18 @@
 <message name="getExpInfoResponse">
 <part name="parameters" element="tns:getExpInfoResponse"/>
 </message>
+<message name="getAllSkills">
+<part name="parameters" element="tns:getAllSkills"/>
+</message>
+<message name="getAllSkillsResponse">
+<part name="parameters" element="tns:getAllSkillsResponse"/>
+</message>
+<message name="getExpAll">
+<part name="parameters" element="tns:getExpAll"/>
+</message>
+<message name="getExpAllResponse">
+<part name="parameters" element="tns:getExpAllResponse"/>
+</message>
 <message name="deleteskill">
 <part name="parameters" element="tns:deleteskill"/>
 </message>
@@ -166,6 +178,12 @@
 <message name="getApplicantQualificationsResponse">
 <part name="parameters" element="tns:getApplicantQualificationsResponse"/>
 </message>
+<message name="getQualificationsAll">
+<part name="parameters" element="tns:getQualificationsAll"/>
+</message>
+<message name="getQualificationsAllResponse">
+<part name="parameters" element="tns:getQualificationsAllResponse"/>
+</message>
 <message name="evaluateApplicant">
 <part name="parameters" element="tns:evaluateApplicant"/>
 </message>
@@ -185,10 +203,6 @@
 <part name="parameters" element="tns:addUserInformationResponse"/>
 </message>
 <portType name="bws">
-<operation name="checkUserJob">
-<input wsam:Action="http://businessOperationsLayer/bws/checkUserJobRequest" message="tns:checkUserJob"/>
-<output wsam:Action="http://businessOperationsLayer/bws/checkUserJobResponse" message="tns:checkUserJobResponse"/>
-</operation>
 <operation name="RegisterAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterAdminRequest" message="tns:RegisterAdmin"/>
 <output wsam:Action="http://businessOperationsLayer/bws/RegisterAdminResponse" message="tns:RegisterAdminResponse"/>
@@ -196,6 +210,10 @@
 <operation name="RegisterUser">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterUserRequest" message="tns:RegisterUser"/>
 <output wsam:Action="http://businessOperationsLayer/bws/RegisterUserResponse" message="tns:RegisterUserResponse"/>
+</operation>
+<operation name="checkUserJob">
+<input wsam:Action="http://businessOperationsLayer/bws/checkUserJobRequest" message="tns:checkUserJob"/>
+<output wsam:Action="http://businessOperationsLayer/bws/checkUserJobResponse" message="tns:checkUserJobResponse"/>
 </operation>
 <operation name="deleteAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/deleteAdminRequest" message="tns:deleteAdmin"/>
@@ -245,6 +263,14 @@
 <input wsam:Action="http://businessOperationsLayer/bws/getExpInfoRequest" message="tns:getExpInfo"/>
 <output wsam:Action="http://businessOperationsLayer/bws/getExpInfoResponse" message="tns:getExpInfoResponse"/>
 </operation>
+<operation name="getAllSkills">
+<input wsam:Action="http://businessOperationsLayer/bws/getAllSkillsRequest" message="tns:getAllSkills"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getAllSkillsResponse" message="tns:getAllSkillsResponse"/>
+</operation>
+<operation name="getExpAll">
+<input wsam:Action="http://businessOperationsLayer/bws/getExpAllRequest" message="tns:getExpAll"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getExpAllResponse" message="tns:getExpAllResponse"/>
+</operation>
 <operation name="deleteskill">
 <input wsam:Action="http://businessOperationsLayer/bws/deleteskillRequest" message="tns:deleteskill"/>
 <output wsam:Action="http://businessOperationsLayer/bws/deleteskillResponse" message="tns:deleteskillResponse"/>
@@ -293,6 +319,10 @@
 <input wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsRequest" message="tns:getApplicantQualifications"/>
 <output wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsResponse" message="tns:getApplicantQualificationsResponse"/>
 </operation>
+<operation name="getQualificationsAll">
+<input wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllRequest" message="tns:getQualificationsAll"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllResponse" message="tns:getQualificationsAllResponse"/>
+</operation>
 <operation name="evaluateApplicant">
 <input wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantRequest" message="tns:evaluateApplicant"/>
 <output wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantResponse" message="tns:evaluateApplicantResponse"/>
@@ -308,15 +338,6 @@
 </portType>
 <binding name="bwsPortBinding" type="tns:bws">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="checkUserJob">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="RegisterAdmin">
 <soap:operation soapAction=""/>
 <input>
@@ -327,6 +348,15 @@
 </output>
 </operation>
 <operation name="RegisterUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="checkUserJob">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -443,6 +473,24 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="getAllSkills">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getExpAll">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="deleteskill">
 <soap:operation soapAction=""/>
 <input>
@@ -543,6 +591,15 @@
 </output>
 </operation>
 <operation name="getApplicantQualifications">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getQualificationsAll">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
