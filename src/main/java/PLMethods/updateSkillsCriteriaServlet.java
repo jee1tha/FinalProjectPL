@@ -1,30 +1,23 @@
-package PLMethods;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import businessoperationslayer.Applicants;
-import businessoperationslayer.Experience;
-import businessoperationslayer.Job;
-import businessoperationslayer.Qualifications;
+package PLMethods;
+
 import businessoperationslayer.Skills;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author VABAYJE
  */
-public class applicationServlet extends HttpServlet {
+public class updateSkillsCriteriaServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,51 +30,42 @@ public class applicationServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        int appid = 0;
-        String user = null;
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         try {
-            Applicants app = new Applicants();
-            user = (String) request.getSession().getAttribute("username");
-            app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
-
-            Skills skill = new Skills();
-
-            skill.getSkillName().add(request.getParameter("txtSkill1"));
-            skill.getSkillName().add(request.getParameter("txtSkill2"));
-            skill.getSkillName().add(request.getParameter("txtSkill3"));
-            skill.getSkillName().add(request.getParameter("txtSkill4"));
-            skill.getSkillName().add(request.getParameter("txtSkill5"));
-            
-            Qualifications qua = new Qualifications();
-            qua.setInstitute(request.getParameter("txtInstitute"));
-            qua.setName(request.getParameter("txtQualification"));
-            qua.setQClass(request.getParameter("txtClass"));
-            
-            Experience exp = new Experience();
-            exp.setOrganization(request.getParameter("txtOrganization"));
-            exp.setPost(request.getParameter("txtPost"));
-            exp.setDuration(1);
-            
-            Job job = new Job();
-            job.setJobid(1);
-            presentationLayerMethods pm = new presentationLayerMethods();
-            int r =pm.addUserInformation(app, job, qua, exp, skill) ;
-            System.out.print(user);
-            
-                   if (r > 1) {
-               request.setAttribute("result", "added");
+             int arraysize = Integer.parseInt(request.getParameter("arraySize"));
+             int result = 0;
+           
+            for(int x = 0; x< arraysize ;x++){
+                String skillID = "txtSkillID" + x;
+                String skillEligibility = "newEligibility" + x ;
+                Skills sk = new Skills();
+                String eligibility = request.getParameter(skillEligibility) ;
+              //  System.out.println(eligibility);
+                if(eligibility.equals("true")){
+                    sk.setSeligibility(true);
+                }else{
+                    sk.setSeligibility(false);
+                }
+              //  String s = request.getParameter(skillID);
+                sk.setSkillID(Integer.parseInt(request.getParameter(skillID)));
                 
-            } else {
-                     request.setAttribute("result", "failed");
+                presentationLayerMethods plm = new presentationLayerMethods();
+               if( plm.updateSkills(sk) == 1){
+                   result++;
+               };
                 
             }
-            request.getRequestDispatcher("/applicationAdded.jsp").forward(request, response);
-        } catch (Exception e) {
-
-            e.printStackTrace();
+            if(result > 1){
+            request.setAttribute("result", "added");
+            }else{
+                request.setAttribute("result", "failed");
+            }
+            request.getRequestDispatcher("/skillsUpdated.jsp").forward(request, response);
+            
+        } finally {
+            out.close();
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

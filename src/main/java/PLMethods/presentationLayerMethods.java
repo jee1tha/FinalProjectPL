@@ -137,6 +137,24 @@ public class presentationLayerMethods {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.getApplicantExp(app);
     }
+    
+
+    public List<Skills> getSkillAll() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.getAllSkills();
+    }
+    
+
+    public List<Experience> getExpAll() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.getExpAll();
+    }
+    
+
+    public List<Qualifications> getQualificationsAll() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.getQualificationsAll();
+    }
 
     public List<Qualifications> getApplicantQualifications(Applicants app) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();

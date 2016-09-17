@@ -62,7 +62,7 @@
                                          <input type="hidden" name="jobid" value="1"> 
                                     </input>
                                     </table>
-                                    <input type='submit' class="btn btn-success" value="Submit" id="btnLogin">
+                                    <input type='submit' class="btn btn-success" value="Apply" id="btnLogin">
                                 </form>
 
                             </div>

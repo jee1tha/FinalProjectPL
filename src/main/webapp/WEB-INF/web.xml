@@ -20,6 +20,14 @@
         <servlet-name>applicationServlet</servlet-name>
         <servlet-class>PLMethods.applicationServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateSkillsCriteriaServlet</servlet-name>
+        <servlet-class>PLMethods.updateSkillsCriteriaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updateExpQuaCriteriaServlet</servlet-name>
+        <servlet-class>PLMethods.updateExpQuaCriteriaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUserServlet</servlet-name>
         <url-pattern>/registerUserServlet</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>applicationServlet</servlet-name>
         <url-pattern>/applicationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateSkillsCriteriaServlet</servlet-name>
+        <url-pattern>/updateSkillsCriteriaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateExpQuaCriteriaServlet</servlet-name>
+        <url-pattern>/updateExpQuaCriteriaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

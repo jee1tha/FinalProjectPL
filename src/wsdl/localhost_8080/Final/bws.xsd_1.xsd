@@ -68,6 +68,10 @@
 
 <xs:element name="getAdminInfoResponse" type="tns:getAdminInfoResponse"/>
 
+<xs:element name="getAllSkills" type="tns:getAllSkills"/>
+
+<xs:element name="getAllSkillsResponse" type="tns:getAllSkillsResponse"/>
+
 <xs:element name="getApplicantExp" type="tns:getApplicantExp"/>
 
 <xs:element name="getApplicantExpResponse" type="tns:getApplicantExpResponse"/>
@@ -84,6 +88,10 @@
 
 <xs:element name="getApplicantsResponse" type="tns:getApplicantsResponse"/>
 
+<xs:element name="getExpAll" type="tns:getExpAll"/>
+
+<xs:element name="getExpAllResponse" type="tns:getExpAllResponse"/>
+
 <xs:element name="getExpInfo" type="tns:getExpInfo"/>
 
 <xs:element name="getExpInfoResponse" type="tns:getExpInfoResponse"/>
@@ -91,6 +99,10 @@
 <xs:element name="getJobInfo" type="tns:getJobInfo"/>
 
 <xs:element name="getJobInfoResponse" type="tns:getJobInfoResponse"/>
+
+<xs:element name="getQualificationsAll" type="tns:getQualificationsAll"/>
+
+<xs:element name="getQualificationsAllResponse" type="tns:getQualificationsAllResponse"/>
 
 <xs:element name="getQualificationsInfo" type="tns:getQualificationsInfo"/>
 
@@ -123,6 +135,27 @@
 <xs:element name="updateSkills" type="tns:updateSkills"/>
 
 <xs:element name="updateSkillsResponse" type="tns:updateSkillsResponse"/>
+
+<xs:complexType name="getExpAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getExpAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:experience" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="experience">
+<xs:sequence>
+<xs:element name="duration" type="xs:int"/>
+<xs:element name="exeligibility" type="xs:boolean"/>
+<xs:element name="expid" type="xs:int"/>
+<xs:element name="organization" type="xs:string" minOccurs="0"/>
+<xs:element name="post" type="xs:string" minOccurs="0"/>
+<xs:element name="ueeligibility" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="RegisterUser">
 <xs:sequence>
@@ -328,17 +361,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="experience">
-<xs:sequence>
-<xs:element name="duration" type="xs:int"/>
-<xs:element name="exeligibility" type="xs:boolean"/>
-<xs:element name="expid" type="xs:int"/>
-<xs:element name="organization" type="xs:string" minOccurs="0"/>
-<xs:element name="post" type="xs:string" minOccurs="0"/>
-<xs:element name="ueeligibility" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="addExperienceResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
@@ -481,6 +503,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAllSkills">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllSkillsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:skills" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="updateSkills">
 <xs:sequence>
 <xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
@@ -549,6 +581,16 @@
 <xs:complexType name="deleteExpResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getQualificationsAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getQualificationsAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:qualifications" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
