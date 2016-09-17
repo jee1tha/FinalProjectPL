@@ -75,7 +75,7 @@
            <jsp:include page="ingrowHeader.jsp" />
         
          </div>
-	</td>
+	
 
  
 	  <jsp:include page="nav.jsp" />
