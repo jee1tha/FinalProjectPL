@@ -107,7 +107,7 @@ public class loginServlet extends HttpServlet {
                       
                     Admin admin = new Admin();
                     admin.setUsername(username);
-                   
+                    
                     role = p.getAdminInfo(admin).get(0).getRole();
                     email = p.getAdminInfo(admin).get(0).getEmail();
                     AdminID = p.getAdminInfo(admin).get(0).getAdminID();

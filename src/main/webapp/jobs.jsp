@@ -6,10 +6,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("admin" )){
+                
+                
+}
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Vacancies</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="home.css" rel="stylesheet" type="text/css" />
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -76,6 +93,13 @@
 
             <br>
             </body>
+                                     <script >
+          $(document).ready(function () {
+        $(".nav li").removeClass("active"); 
+        $('#jobs').addClass('active');
+       
+    });
+        </script>
             </head>
             <footer>  © Copyrights 2016 Project InGrow </footer>
         </div>

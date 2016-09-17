@@ -4,6 +4,28 @@
 
 <html>
     <head>
+        <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("admin" )){
+                %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+            }if( type.equals("user")){
+ %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+}
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Admin Register</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -11,6 +33,13 @@
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script >
+          $(document).ready(function () {
+        $(".nav li").removeClass("active"); 
+        $('#adminReg').addClass('active');
+       
+    });
+        </script>
     <body>
         <div class="container ">
             <div class="row">
@@ -105,6 +134,7 @@
                     });
                 });
             </script>
+              
     </body>
     <footer>  Copyrights 2016 Project InGrow </footer>
 </div>

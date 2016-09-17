@@ -2,8 +2,32 @@
     <!DOCTYPE html>
 <html>
    <head>
-      <link href="home.css" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+              <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("admin" )){
+                %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+            }if( type.equals("masteradmin")){
+ %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+}
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title> Job Application </title>
 
@@ -17,16 +41,18 @@
                <marquee>Enter your Information so we can evaluate you </marquee>
             </div>
          </div>
+          <div class="row">
+           <jsp:include page="ingrowHeader.jsp" />
+          </div>
         
-         <div class="row">
+            <jsp:include page="nav.jsp" />
+        
+         <div id=bodymid>
+              <div class="row">
             <div class="col-md-12 col-sm-6 pagination-centered " id=welcome2  > Add your Information  
             </div>
              
          </div>
-            <jsp:include page="nav.jsp" />
-         </td>
-        
-         <div id=bodymid>
             <form id="userinformationform" method="Post" action="applicationServlet">
                <div class="col-md-6 col-sm-3 ">
                   <div class="panel-group"  >
@@ -126,5 +152,12 @@
          </div>
          <footer>  Copyrights 2016 InGrow </footer>
       </div>
+                            <script >
+          $(document).ready(function () {
+        $(".nav li").removeClass("active"); 
+        $('#application').addClass('active');
+       
+    });
+        </script>
    </body>
 </html>

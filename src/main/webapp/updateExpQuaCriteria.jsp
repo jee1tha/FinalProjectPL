@@ -9,10 +9,34 @@
          pageEncoding="ISO-8859-1"%>
 <html>
     <head>
+         <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("admin" )){
+                %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+            }if( type.equals("user")){
+ %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+}
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Update Job Criteria</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="home.css" rel="stylesheet" type="text/css" />
+<link href="home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -172,6 +196,7 @@
                     </form>
                 </div>
                 </body>
+    
                 <footer>  Copyrights 2016 Jeewantha Abayakoon </footer>
             </div>
 </html>
