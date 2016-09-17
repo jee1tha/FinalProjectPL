@@ -160,7 +160,7 @@
                                     }
                                 %>
                         </table>
-                        <input type="hidden" class="form-control" name="arraysizeExp" id="arraysizeExp" value= <%=arraysizeExp%> >
+                        <input type="hidden" class="form-control" name="arraysizeQua" id="arraysizeQua" value= <%=arraysizeQua%> >
                     </div>
 
 
