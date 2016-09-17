@@ -7,7 +7,9 @@ and open the template in the editor.
     Created on : Feb 6, 2016, 11:09:33 AM
     Author     : hexa
 */
-
+body {
+	font-family: 'Oswald', Oswald;
+}
 
 td {
 	font-family: Arial, Helvetica, sans-serif;
