@@ -9,6 +9,28 @@
 <doctype html>
 <html>
 <head>
+            <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("admin" )){
+                %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+            }if( type.equals("user")){
+ %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+}
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link href="home.css" rel="stylesheet" type="text/css" />
 
@@ -20,6 +42,13 @@
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <script >
+          $(document).ready(function () {
+        $(".nav li").removeClass("active"); 
+        $('#adminTools').addClass('active');
+       
+    });
+        </script>
 	<div class="container">
         <div class="row">
         <div class="col-md-12 col-sm-6" id=welcome1>

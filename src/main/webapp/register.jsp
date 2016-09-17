@@ -7,7 +7,9 @@
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
       <title>Register User</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <link href="home.css" rel="stylesheet" type="text/css" />
+<link href="home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    </head>
      <% if(session.getAttribute("registration") !=null){
                 String reg = (String)session.getAttribute("registration");;
@@ -113,6 +115,13 @@
       </script>
       <br>
    </body>
+                            <script >
+          $(document).ready(function () {
+        $(".nav li").removeClass("active"); 
+        $('#register').addClass('active');
+       
+    });
+        </script>
    
    <footer>  © Copyrights 2016 Project InGrow </footer>
    </div>

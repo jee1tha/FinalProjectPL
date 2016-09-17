@@ -7,8 +7,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Report</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="home.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="home.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -19,6 +22,10 @@
                     ----------------------------------
                 </div>
             </div>
+              <div class="row">
+           <jsp:include page="ingrowHeader.jsp" />
+        
+         </div>
             <div class="row"> 
                 <div class="col-md-12 col-sm-5 text-center" id="welcome2">Applicant Report</div>
             </div>
@@ -53,7 +60,7 @@
                                 <td class="success"><%=   plm.getUserEvaluationAll().get(i).getSkillScore()%></td>
                                 <td class="success"><%=   plm.getUserEvaluationAll().get(i).getExpQuaScore()%></td>
                                 <td class="info class">.<%=   plm.getUserEvaluationAll().get(i).getFinalScore()%></td>
-                                <td class="panel-warning"> <form method="GET" action="profile.jsp"> 
+                                <td class="panel-warning"> <form method="POST" action="profile.jsp"> 
                                     <input type="hidden" class="form-control" name="appid" id="appid" value= <%= plm.getUserEvaluationAll().get(i).getApplicantID() %> >
                                     <button type="submit" class="btn btn-danger">View </button>
                                     </form> 
@@ -71,6 +78,14 @@
                                 class="btn5" onClick="window.print()" /> <br> <br> <br>
                 </div>
                 </body>
+                <script>
+                      $(document).ready(function () {
+                 $(".nav li").removeClass("active");//this will remove the active class from  
+                                           //previously active menu item 
+                 $('#viewapp').addClass('active');
+    
+    });
+                    </script>
                 <footer>  Copyrights 2016 Jeewantha Abayakoon </footer>
             </div>
 </html>

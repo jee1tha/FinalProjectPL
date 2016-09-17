@@ -20,13 +20,13 @@
                 <a class="navbar-brand" href="#">Navigation Panel</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="jobs.jsp">Apply for Job</a></li>
-                <li><a href="about.jsp">About</a></li>
+                <li id="index"><a href="index.jsp">Home</a></li>
+                <li id="jobs"><a href="jobs.jsp">Apply for Job</a></li>
+                <li id="about"><a href="about.jsp">About</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
+                <li id="logout"><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
 
             </ul>
         </div>
@@ -42,14 +42,14 @@
                 <a class="navbar-brand" href="#">Navigation Panel</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="ViewApplicants.jsp">View Applicants</a></li>
-                <li><a href="job.jsp">Jobs</a></li>
-                <li><a href="about.jsp">About</a></li>
+                <li id="index"><a href="index.jsp">Home</a></li>
+                <li id="viewapp"><a href="ViewApplicants.jsp">View Applicants</a></li>
+                <li id="jobs"><a href="jobs.jsp">Jobs</a></li>
+                <li id="about"><a href="about.jsp">About</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
+                <li id="logout"><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
 
             </ul>
         </div>
@@ -65,14 +65,16 @@
                 <a class="navbar-brand" href="#">Navigation Panel</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="ViewApplicants.jsp">View Applicants</a></li>
+                <li id="home"><a href="index.jsp">Home</a></li>
                 <li><a href="jobs.jsp">Jobs</a></li>
-                <li><a href="about.jsp">About</a></li>
-
+                <li id="viewapp"><a href="ViewApplicants.jsp">View Applicants</a></li>
+                
+                <li id="about"><a href="about.jsp">About</a></li>
+                 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="adminRegister.jsp"><span class="glyphicon glyphicon-user"></span>Add Admins </a></li>
+                <li id="adminTools"><a href="adminTool.jsp"><span class="	glyphicon glyphicon-off"> Admin Tools</span> </a></li>
+                <li id="adminReg" ><a href="adminRegister.jsp"><span class="glyphicon glyphicon-user"> Add Admins</span> </a></li>
                 <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
 
             </ul>
@@ -89,13 +91,13 @@
                 <a class="navbar-brand" href="#">Navigation Panel</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.jsp">Home</a></li>
+                <li id="index"><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+                <li id="register"><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li id="login"><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
             </ul>
         </div>
     </nav>
@@ -103,6 +105,7 @@
         }
 
     %>
+    
 </head>
 
 </html>

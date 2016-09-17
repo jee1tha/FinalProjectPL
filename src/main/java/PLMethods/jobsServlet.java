@@ -36,6 +36,7 @@ public class jobsServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+            if(request.getSession().getAttribute("role").toString().equals("user")){
            String n = request.getParameter("jobid");
            Job job = new Job();
            job.setJobid(Integer.parseInt(n));
@@ -52,6 +53,9 @@ public class jobsServlet extends HttpServlet {
                     }else {
                          request.getRequestDispatcher("/jobdenied.jsp").forward(request, response);
                     }
+            }else{
+                request.getRequestDispatcher("/application.jsp").forward(request, response);
+            }
         } finally {
             out.close();
         }

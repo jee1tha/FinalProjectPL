@@ -41,6 +41,7 @@ public class applicationServlet extends HttpServlet {
         int appid = 0;
         String user = null;
         try {
+            if(request.getSession().getAttribute("role").toString().equals("user")){
             Applicants app = new Applicants();
             user = (String) request.getSession().getAttribute("username");
             app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
@@ -72,11 +73,16 @@ public class applicationServlet extends HttpServlet {
                    if (r > 1) {
                request.setAttribute("result", "added");
                 
-            } else {
+            } if (r == 1) {
+                request.setAttribute("result", "added");
+            }else {
                      request.setAttribute("result", "failed");
                 
             }
             request.getRequestDispatcher("/applicationAdded.jsp").forward(request, response);
+            }else{
+                 request.getRequestDispatcher("/application.jsp").forward(request, response);
+            }
         } catch (Exception e) {
 
             e.printStackTrace();
