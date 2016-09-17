@@ -34,7 +34,10 @@ public class presentationLayerMethods {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.getUserEvaluationAll();
     }
-
+  public int evaluateAllApplicants() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.evaluateAllApplicants();
+    }
     public int RegisterUser(Applicants app) {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.registerUser(app);

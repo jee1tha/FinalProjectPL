@@ -28,6 +28,10 @@
         <servlet-name>updateExpQuaCriteriaServlet</servlet-name>
         <servlet-class>PLMethods.updateExpQuaCriteriaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>adminToolServlet</servlet-name>
+        <servlet-class>PLMethods.adminToolServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerUserServlet</servlet-name>
         <url-pattern>/registerUserServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>updateExpQuaCriteriaServlet</servlet-name>
         <url-pattern>/updateExpQuaCriteriaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminToolServlet</servlet-name>
+        <url-pattern>/adminToolServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

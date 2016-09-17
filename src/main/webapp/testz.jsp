@@ -18,6 +18,7 @@
             presentationLayerMethods pl =new  presentationLayerMethods();
         
                 pl.trainSkillsNN();
+             pl.trainQualificationsExperienceNN();
             %>
     </body>
 </html>
