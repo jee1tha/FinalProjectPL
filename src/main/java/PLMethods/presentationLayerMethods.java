@@ -22,6 +22,14 @@ import org.apache.log4j.chainsaw.Main;
  */
 public class presentationLayerMethods {
 
+     public int trainSkillsNN() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.trainSkillsNN();
+    }
+      public int trainQualificationsExperienceNN() {
+        Bws proxy = SingletonCon.getInstance().getBwsPort();
+        return proxy.trainQualificationsExperienceNN();
+    }
     public List<Job> getUserEvaluationAll() {
         Bws proxy = SingletonCon.getInstance().getBwsPort();
         return proxy.getUserEvaluationAll();

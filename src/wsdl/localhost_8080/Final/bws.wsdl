@@ -4,11 +4,101 @@
 <xsd:import namespace="http://businessOperationsLayer/" schemaLocation="http://localhost:8080/Final/bws?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="trainQualificationsExperienceNN">
+<part name="parameters" element="tns:trainQualificationsExperienceNN"/>
+</message>
+<message name="trainQualificationsExperienceNNResponse">
+<part name="parameters" element="tns:trainQualificationsExperienceNNResponse"/>
+</message>
+<message name="addQualifications">
+<part name="parameters" element="tns:addQualifications"/>
+</message>
+<message name="addQualificationsResponse">
+<part name="parameters" element="tns:addQualificationsResponse"/>
+</message>
+<message name="updateExperience">
+<part name="parameters" element="tns:updateExperience"/>
+</message>
+<message name="updateExperienceResponse">
+<part name="parameters" element="tns:updateExperienceResponse"/>
+</message>
+<message name="updateQualifications">
+<part name="parameters" element="tns:updateQualifications"/>
+</message>
+<message name="updateQualificationsResponse">
+<part name="parameters" element="tns:updateQualificationsResponse"/>
+</message>
+<message name="getUserJobInfo">
+<part name="parameters" element="tns:getUserJobInfo"/>
+</message>
+<message name="getUserJobInfoResponse">
+<part name="parameters" element="tns:getUserJobInfoResponse"/>
+</message>
+<message name="getUserEvaluationAll">
+<part name="parameters" element="tns:getUserEvaluationAll"/>
+</message>
+<message name="getUserEvaluationAllResponse">
+<part name="parameters" element="tns:getUserEvaluationAllResponse"/>
+</message>
+<message name="getQualificationsInfo">
+<part name="parameters" element="tns:getQualificationsInfo"/>
+</message>
+<message name="getQualificationsInfoResponse">
+<part name="parameters" element="tns:getQualificationsInfoResponse"/>
+</message>
+<message name="getApplicantSkills">
+<part name="parameters" element="tns:getApplicantSkills"/>
+</message>
+<message name="getApplicantSkillsResponse">
+<part name="parameters" element="tns:getApplicantSkillsResponse"/>
+</message>
+<message name="getApplicantExp">
+<part name="parameters" element="tns:getApplicantExp"/>
+</message>
+<message name="getApplicantExpResponse">
+<part name="parameters" element="tns:getApplicantExpResponse"/>
+</message>
+<message name="getApplicantQualifications">
+<part name="parameters" element="tns:getApplicantQualifications"/>
+</message>
+<message name="getApplicantQualificationsResponse">
+<part name="parameters" element="tns:getApplicantQualificationsResponse"/>
+</message>
+<message name="getQualificationsAll">
+<part name="parameters" element="tns:getQualificationsAll"/>
+</message>
+<message name="getQualificationsAllResponse">
+<part name="parameters" element="tns:getQualificationsAllResponse"/>
+</message>
+<message name="evaluateApplicant">
+<part name="parameters" element="tns:evaluateApplicant"/>
+</message>
+<message name="evaluateApplicantResponse">
+<part name="parameters" element="tns:evaluateApplicantResponse"/>
+</message>
+<message name="deleteQualifications">
+<part name="parameters" element="tns:deleteQualifications"/>
+</message>
+<message name="deleteQualificationsResponse">
+<part name="parameters" element="tns:deleteQualificationsResponse"/>
+</message>
+<message name="addUserInformation">
+<part name="parameters" element="tns:addUserInformation"/>
+</message>
+<message name="addUserInformationResponse">
+<part name="parameters" element="tns:addUserInformationResponse"/>
+</message>
 <message name="RegisterAdmin">
 <part name="parameters" element="tns:RegisterAdmin"/>
 </message>
 <message name="RegisterAdminResponse">
 <part name="parameters" element="tns:RegisterAdminResponse"/>
+</message>
+<message name="trainSkillsNN">
+<part name="parameters" element="tns:trainSkillsNN"/>
+</message>
+<message name="trainSkillsNNResponse">
+<part name="parameters" element="tns:trainSkillsNNResponse"/>
 </message>
 <message name="RegisterUser">
 <part name="parameters" element="tns:RegisterUser"/>
@@ -124,88 +214,70 @@
 <message name="deleteJobResponse">
 <part name="parameters" element="tns:deleteJobResponse"/>
 </message>
-<message name="addQualifications">
-<part name="parameters" element="tns:addQualifications"/>
-</message>
-<message name="addQualificationsResponse">
-<part name="parameters" element="tns:addQualificationsResponse"/>
-</message>
-<message name="updateExperience">
-<part name="parameters" element="tns:updateExperience"/>
-</message>
-<message name="updateExperienceResponse">
-<part name="parameters" element="tns:updateExperienceResponse"/>
-</message>
-<message name="updateQualifications">
-<part name="parameters" element="tns:updateQualifications"/>
-</message>
-<message name="updateQualificationsResponse">
-<part name="parameters" element="tns:updateQualificationsResponse"/>
-</message>
-<message name="getUserJobInfo">
-<part name="parameters" element="tns:getUserJobInfo"/>
-</message>
-<message name="getUserJobInfoResponse">
-<part name="parameters" element="tns:getUserJobInfoResponse"/>
-</message>
-<message name="getUserEvaluationAll">
-<part name="parameters" element="tns:getUserEvaluationAll"/>
-</message>
-<message name="getUserEvaluationAllResponse">
-<part name="parameters" element="tns:getUserEvaluationAllResponse"/>
-</message>
-<message name="getQualificationsInfo">
-<part name="parameters" element="tns:getQualificationsInfo"/>
-</message>
-<message name="getQualificationsInfoResponse">
-<part name="parameters" element="tns:getQualificationsInfoResponse"/>
-</message>
-<message name="getApplicantSkills">
-<part name="parameters" element="tns:getApplicantSkills"/>
-</message>
-<message name="getApplicantSkillsResponse">
-<part name="parameters" element="tns:getApplicantSkillsResponse"/>
-</message>
-<message name="getApplicantExp">
-<part name="parameters" element="tns:getApplicantExp"/>
-</message>
-<message name="getApplicantExpResponse">
-<part name="parameters" element="tns:getApplicantExpResponse"/>
-</message>
-<message name="getApplicantQualifications">
-<part name="parameters" element="tns:getApplicantQualifications"/>
-</message>
-<message name="getApplicantQualificationsResponse">
-<part name="parameters" element="tns:getApplicantQualificationsResponse"/>
-</message>
-<message name="getQualificationsAll">
-<part name="parameters" element="tns:getQualificationsAll"/>
-</message>
-<message name="getQualificationsAllResponse">
-<part name="parameters" element="tns:getQualificationsAllResponse"/>
-</message>
-<message name="evaluateApplicant">
-<part name="parameters" element="tns:evaluateApplicant"/>
-</message>
-<message name="evaluateApplicantResponse">
-<part name="parameters" element="tns:evaluateApplicantResponse"/>
-</message>
-<message name="deleteQualifications">
-<part name="parameters" element="tns:deleteQualifications"/>
-</message>
-<message name="deleteQualificationsResponse">
-<part name="parameters" element="tns:deleteQualificationsResponse"/>
-</message>
-<message name="addUserInformation">
-<part name="parameters" element="tns:addUserInformation"/>
-</message>
-<message name="addUserInformationResponse">
-<part name="parameters" element="tns:addUserInformationResponse"/>
-</message>
 <portType name="bws">
+<operation name="trainQualificationsExperienceNN">
+<input wsam:Action="http://businessOperationsLayer/bws/trainQualificationsExperienceNNRequest" message="tns:trainQualificationsExperienceNN"/>
+<output wsam:Action="http://businessOperationsLayer/bws/trainQualificationsExperienceNNResponse" message="tns:trainQualificationsExperienceNNResponse"/>
+</operation>
+<operation name="addQualifications">
+<input wsam:Action="http://businessOperationsLayer/bws/addQualificationsRequest" message="tns:addQualifications"/>
+<output wsam:Action="http://businessOperationsLayer/bws/addQualificationsResponse" message="tns:addQualificationsResponse"/>
+</operation>
+<operation name="updateExperience">
+<input wsam:Action="http://businessOperationsLayer/bws/updateExperienceRequest" message="tns:updateExperience"/>
+<output wsam:Action="http://businessOperationsLayer/bws/updateExperienceResponse" message="tns:updateExperienceResponse"/>
+</operation>
+<operation name="updateQualifications">
+<input wsam:Action="http://businessOperationsLayer/bws/updateQualificationsRequest" message="tns:updateQualifications"/>
+<output wsam:Action="http://businessOperationsLayer/bws/updateQualificationsResponse" message="tns:updateQualificationsResponse"/>
+</operation>
+<operation name="getUserJobInfo">
+<input wsam:Action="http://businessOperationsLayer/bws/getUserJobInfoRequest" message="tns:getUserJobInfo"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getUserJobInfoResponse" message="tns:getUserJobInfoResponse"/>
+</operation>
+<operation name="getUserEvaluationAll">
+<input wsam:Action="http://businessOperationsLayer/bws/getUserEvaluationAllRequest" message="tns:getUserEvaluationAll"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getUserEvaluationAllResponse" message="tns:getUserEvaluationAllResponse"/>
+</operation>
+<operation name="getQualificationsInfo">
+<input wsam:Action="http://businessOperationsLayer/bws/getQualificationsInfoRequest" message="tns:getQualificationsInfo"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getQualificationsInfoResponse" message="tns:getQualificationsInfoResponse"/>
+</operation>
+<operation name="getApplicantSkills">
+<input wsam:Action="http://businessOperationsLayer/bws/getApplicantSkillsRequest" message="tns:getApplicantSkills"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getApplicantSkillsResponse" message="tns:getApplicantSkillsResponse"/>
+</operation>
+<operation name="getApplicantExp">
+<input wsam:Action="http://businessOperationsLayer/bws/getApplicantExpRequest" message="tns:getApplicantExp"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getApplicantExpResponse" message="tns:getApplicantExpResponse"/>
+</operation>
+<operation name="getApplicantQualifications">
+<input wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsRequest" message="tns:getApplicantQualifications"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsResponse" message="tns:getApplicantQualificationsResponse"/>
+</operation>
+<operation name="getQualificationsAll">
+<input wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllRequest" message="tns:getQualificationsAll"/>
+<output wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllResponse" message="tns:getQualificationsAllResponse"/>
+</operation>
+<operation name="evaluateApplicant">
+<input wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantRequest" message="tns:evaluateApplicant"/>
+<output wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantResponse" message="tns:evaluateApplicantResponse"/>
+</operation>
+<operation name="deleteQualifications">
+<input wsam:Action="http://businessOperationsLayer/bws/deleteQualificationsRequest" message="tns:deleteQualifications"/>
+<output wsam:Action="http://businessOperationsLayer/bws/deleteQualificationsResponse" message="tns:deleteQualificationsResponse"/>
+</operation>
+<operation name="addUserInformation">
+<input wsam:Action="http://businessOperationsLayer/bws/addUserInformationRequest" message="tns:addUserInformation"/>
+<output wsam:Action="http://businessOperationsLayer/bws/addUserInformationResponse" message="tns:addUserInformationResponse"/>
+</operation>
 <operation name="RegisterAdmin">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterAdminRequest" message="tns:RegisterAdmin"/>
 <output wsam:Action="http://businessOperationsLayer/bws/RegisterAdminResponse" message="tns:RegisterAdminResponse"/>
+</operation>
+<operation name="trainSkillsNN">
+<input wsam:Action="http://businessOperationsLayer/bws/trainSkillsNNRequest" message="tns:trainSkillsNN"/>
+<output wsam:Action="http://businessOperationsLayer/bws/trainSkillsNNResponse" message="tns:trainSkillsNNResponse"/>
 </operation>
 <operation name="RegisterUser">
 <input wsam:Action="http://businessOperationsLayer/bws/RegisterUserRequest" message="tns:RegisterUser"/>
@@ -283,62 +355,145 @@
 <input wsam:Action="http://businessOperationsLayer/bws/deleteJobRequest" message="tns:deleteJob"/>
 <output wsam:Action="http://businessOperationsLayer/bws/deleteJobResponse" message="tns:deleteJobResponse"/>
 </operation>
-<operation name="addQualifications">
-<input wsam:Action="http://businessOperationsLayer/bws/addQualificationsRequest" message="tns:addQualifications"/>
-<output wsam:Action="http://businessOperationsLayer/bws/addQualificationsResponse" message="tns:addQualificationsResponse"/>
-</operation>
-<operation name="updateExperience">
-<input wsam:Action="http://businessOperationsLayer/bws/updateExperienceRequest" message="tns:updateExperience"/>
-<output wsam:Action="http://businessOperationsLayer/bws/updateExperienceResponse" message="tns:updateExperienceResponse"/>
-</operation>
-<operation name="updateQualifications">
-<input wsam:Action="http://businessOperationsLayer/bws/updateQualificationsRequest" message="tns:updateQualifications"/>
-<output wsam:Action="http://businessOperationsLayer/bws/updateQualificationsResponse" message="tns:updateQualificationsResponse"/>
-</operation>
-<operation name="getUserJobInfo">
-<input wsam:Action="http://businessOperationsLayer/bws/getUserJobInfoRequest" message="tns:getUserJobInfo"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getUserJobInfoResponse" message="tns:getUserJobInfoResponse"/>
-</operation>
-<operation name="getUserEvaluationAll">
-<input wsam:Action="http://businessOperationsLayer/bws/getUserEvaluationAllRequest" message="tns:getUserEvaluationAll"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getUserEvaluationAllResponse" message="tns:getUserEvaluationAllResponse"/>
-</operation>
-<operation name="getQualificationsInfo">
-<input wsam:Action="http://businessOperationsLayer/bws/getQualificationsInfoRequest" message="tns:getQualificationsInfo"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getQualificationsInfoResponse" message="tns:getQualificationsInfoResponse"/>
-</operation>
-<operation name="getApplicantSkills">
-<input wsam:Action="http://businessOperationsLayer/bws/getApplicantSkillsRequest" message="tns:getApplicantSkills"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getApplicantSkillsResponse" message="tns:getApplicantSkillsResponse"/>
-</operation>
-<operation name="getApplicantExp">
-<input wsam:Action="http://businessOperationsLayer/bws/getApplicantExpRequest" message="tns:getApplicantExp"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getApplicantExpResponse" message="tns:getApplicantExpResponse"/>
-</operation>
-<operation name="getApplicantQualifications">
-<input wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsRequest" message="tns:getApplicantQualifications"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getApplicantQualificationsResponse" message="tns:getApplicantQualificationsResponse"/>
-</operation>
-<operation name="getQualificationsAll">
-<input wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllRequest" message="tns:getQualificationsAll"/>
-<output wsam:Action="http://businessOperationsLayer/bws/getQualificationsAllResponse" message="tns:getQualificationsAllResponse"/>
-</operation>
-<operation name="evaluateApplicant">
-<input wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantRequest" message="tns:evaluateApplicant"/>
-<output wsam:Action="http://businessOperationsLayer/bws/evaluateApplicantResponse" message="tns:evaluateApplicantResponse"/>
-</operation>
-<operation name="deleteQualifications">
-<input wsam:Action="http://businessOperationsLayer/bws/deleteQualificationsRequest" message="tns:deleteQualifications"/>
-<output wsam:Action="http://businessOperationsLayer/bws/deleteQualificationsResponse" message="tns:deleteQualificationsResponse"/>
-</operation>
-<operation name="addUserInformation">
-<input wsam:Action="http://businessOperationsLayer/bws/addUserInformationRequest" message="tns:addUserInformation"/>
-<output wsam:Action="http://businessOperationsLayer/bws/addUserInformationResponse" message="tns:addUserInformationResponse"/>
-</operation>
 </portType>
 <binding name="bwsPortBinding" type="tns:bws">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="trainQualificationsExperienceNN">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addQualifications">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateExperience">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateQualifications">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUserJobInfo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUserEvaluationAll">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getQualificationsInfo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getApplicantSkills">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getApplicantExp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getApplicantQualifications">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getQualificationsAll">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="evaluateApplicant">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteQualifications">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addUserInformation">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="RegisterAdmin">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="trainSkillsNN">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -510,123 +665,6 @@
 </output>
 </operation>
 <operation name="deleteJob">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addQualifications">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateExperience">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="updateQualifications">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUserJobInfo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUserEvaluationAll">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getQualificationsInfo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getApplicantSkills">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getApplicantExp">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getApplicantQualifications">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getQualificationsAll">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="evaluateApplicant">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="deleteQualifications">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="addUserInformation">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -124,6 +124,14 @@
 
 <xs:element name="skills" type="tns:skills"/>
 
+<xs:element name="trainQualificationsExperienceNN" type="tns:trainQualificationsExperienceNN"/>
+
+<xs:element name="trainQualificationsExperienceNNResponse" type="tns:trainQualificationsExperienceNNResponse"/>
+
+<xs:element name="trainSkillsNN" type="tns:trainSkillsNN"/>
+
+<xs:element name="trainSkillsNNResponse" type="tns:trainSkillsNNResponse"/>
+
 <xs:element name="updateExperience" type="tns:updateExperience"/>
 
 <xs:element name="updateExperienceResponse" type="tns:updateExperienceResponse"/>
@@ -235,6 +243,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="deleteskill">
+<xs:sequence>
+<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteskillResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deleteAdmin">
 <xs:sequence>
 <xs:element name="adminObj" type="tns:admin" minOccurs="0"/>
@@ -253,18 +273,6 @@
 </xs:complexType>
 
 <xs:complexType name="deleteAdminResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteskill">
-<xs:sequence>
-<xs:element name="skillObj" type="tns:skills" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="deleteskillResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
 </xs:sequence>
@@ -407,6 +415,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="trainSkillsNN">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trainSkillsNNResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deleteUser">
 <xs:sequence>
 <xs:element name="userObj" type="tns:applicants" minOccurs="0"/>
@@ -476,6 +494,16 @@
 <xs:complexType name="getApplicantsResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:applicants" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="trainQualificationsExperienceNN">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="trainQualificationsExperienceNNResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 

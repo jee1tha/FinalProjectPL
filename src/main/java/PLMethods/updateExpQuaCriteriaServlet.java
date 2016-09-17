@@ -5,6 +5,9 @@
  */
 package PLMethods;
 
+import businessoperationslayer.Experience;
+import businessoperationslayer.Qualifications;
+import businessoperationslayer.Skills;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,16 +35,60 @@ public class updateExpQuaCriteriaServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet updateExpQuaCriteriaServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet updateExpQuaCriteriaServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+          int arraysizeExp = Integer.parseInt(request.getParameter("arraysizeExp"));
+          
+             int result = 0;
+           
+            for(int x = 0; x< arraysizeExp ;x++){
+                String expID = "txtExpID" + x;
+                String ExpEligibility = "newExpEligibility" + x ;
+                Experience ex = new Experience();
+                String ExperienceEligibility = request.getParameter(ExpEligibility) ;
+              //  System.out.println(eligibility);
+                if(ExperienceEligibility.equals("true")){
+                    ex.setExeligibility(true);
+                }else{
+                    ex.setExeligibility(false);
+                }
+              //  String s = request.getParameter(skillID);
+                ex.setExpid(Integer.parseInt(request.getParameter(expID)));
+                
+                presentationLayerMethods plm = new presentationLayerMethods();
+               if( plm.updateExperience(ex) == 1){
+                   result++;
+               };
+                
+            }
+            
+             int arraysizeQua = Integer.parseInt(request.getParameter("arraysizeQua"));
+          
+             int resultQua = 0;
+           
+            for(int x = 0; x< arraysizeExp ;x++){
+                String quaID = "txtQuaID" + x;
+                String QuaEligibility = "newQuaEligibility" + x ;
+                Qualifications qua = new Qualifications();
+                String ExperienceEligibility = request.getParameter(QuaEligibility) ;
+              //  System.out.println(eligibility);
+                if(ExperienceEligibility.equals("true")){
+                    qua.setQualificationsEligibility(true);
+                }else{
+                    qua.setQualificationsEligibility(false);
+                }
+              //  String s = request.getParameter(skillID);
+                qua.setId(Integer.parseInt(request.getParameter(quaID)));
+                
+                presentationLayerMethods plm = new presentationLayerMethods();
+               if( plm.updateQualifications(qua) == 1){
+                   resultQua++;
+               };
+                
+            }    if(result > 1 && resultQua > 1){
+            request.setAttribute("result", "added");
+            }else{
+                request.setAttribute("result", "failed");
+            }
+            request.getRequestDispatcher("/ExpQuaUpdated.jsp").forward(request, response);
         } finally {
             out.close();
         }
