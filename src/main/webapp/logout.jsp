@@ -11,16 +11,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <title>JSP Page</title>
     </head>
-    <body>
-       <%  if(request.getSession() != null){
-            request.getSession().invalidate();
-        %>
-  <script> 
-            alert("Successfully logged out !");
+    <script>
+        var r = confirm("Are you sure you want to logout ?")
+        if(r==true){
+             
+            window.location.replace("logoutconfirm.jsp");
+        }else{
+             alert("Greate choice !");
             window.location.replace("index.jsp");
-                    </script>
-                    <%
-}
-            %>
+        }
+        </script>
+    <body>
+ 
     </body>
 </html>
