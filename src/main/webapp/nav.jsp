@@ -22,7 +22,7 @@
             <ul class="nav navbar-nav">
                 <li id="index"><a href="index.jsp">Home</a></li>
                 <li id="jobs"><a href="jobs.jsp">Apply for Job</a></li>
-                <li id="about"><a href="about.jsp">About</a></li>
+              
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -45,7 +45,7 @@
                 <li id="index"><a href="index.jsp">Home</a></li>
                 <li id="viewapp"><a href="ViewApplicants.jsp">View Applicants</a></li>
                 <li id="jobs"><a href="jobs.jsp">Jobs</a></li>
-                <li id="about"><a href="about.jsp">About</a></li>
+               
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -69,13 +69,13 @@
                 <li><a href="jobs.jsp">Jobs</a></li>
                 <li id="viewapp"><a href="ViewApplicants.jsp">View Applicants</a></li>
                 
-                <li id="about"><a href="about.jsp">About</a></li>
+              
                  
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li id="adminTools"><a href="adminTool.jsp"><span class="	glyphicon glyphicon-off"> Admin Tools</span> </a></li>
                 <li id="adminReg" ><a href="adminRegister.jsp"><span class="glyphicon glyphicon-user"> Add Admins</span> </a></li>
-                <li><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
+                <li><a href="logout.jsp" ><span class="glyphicon glyphicon-log-in" ></span>Logout </a></li>
 
             </ul>
         </div>
@@ -92,7 +92,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li id="index"><a href="index.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
+                
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
