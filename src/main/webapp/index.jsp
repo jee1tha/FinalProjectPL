@@ -58,8 +58,8 @@
     <div class="row">
         <div class="col-md-6 col-sm-3 panel-group"  >
              <div class="panel panel-info">
-                 <div class="panel-body"> <h3> What is Project InGrow?</h3> </div>
-        
+                 
+                 <img src='banner.jpg' class='img-rounded' alt='Cinque Terre' width='550' height='520'>
              </div>
            
          </div>

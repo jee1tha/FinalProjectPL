@@ -50,7 +50,7 @@
                                                   if (username != null ){  
                     %>
                    
-                    <Script >alert('Login successful'); 
+                    <Script >
                     window.location = "index.jsp";</Script>
                     
                      

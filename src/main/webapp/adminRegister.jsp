@@ -98,9 +98,10 @@
                                     <td><input type='number' name='txtContactNo' class="form-control" placeholder="enter ContactNo" id='txtContactNo' required> </input></td>
                                 </tr>
                             </table>
-                            <tr>
-                                <td><label for="role"> Select Role</label> </td>
-                                <td>   
+                            
+                                <table width="200" border="0" cellpadding="5">
+                               <tr> <td><label for="role"> Select Role</label>  </td>
+                               <td>    
                            
                                   <select  name="role">
                                       <option value="admin">Admin</option>
@@ -108,17 +109,19 @@
                                   
                             
                                 </select>
-                                  
-                                </div>
+                                   </td>
+                                </tr>  
    
-                                </td>
-                            </tr>
-                            <input type='submit' class="btn btn-success" value="Submit" id="btnLogin">
-                            </input> <a href="index.jsp" class="btn btn-danger">Cancel </a> </input>
+                                 
+                            <tr>
+                          <td>  <input type='submit' class="btn btn-success" value="Submit" id="btnLogin"></td>
+                          <td>  </input> <a href="index.jsp" class="btn btn-danger"> Cancel </a> </input></td>
+                        </tr>      
                         </form>
+                        </table>
                     </div>
                 </div>
-            </div>
+            
             <script type="text/javascript"
             src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
             <script type="text/javascript">
