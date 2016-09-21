@@ -65,7 +65,7 @@
                </tr>
                <tr>
                <td><label for="txtConfirmPassword"> Confirm Password </label></td>
-               <td><input type='confirmPassword' name='txtConfirmPassword' class="form-control" placeholder="enter Password" id='txtPasswordConfirm' required>
+               <td><input type='password' name='txtConfirmPassword' class="form-control" placeholder="enter Password" id='txtPasswordConfirm' required>
                </input></td>
             </div>
             </tr>
