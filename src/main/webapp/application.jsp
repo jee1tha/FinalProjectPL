@@ -1,6 +1,6 @@
 
     <!DOCTYPE html>
-<html>
+<html lang="en">
    <head>
               <%
             String username = (String)session.getAttribute("username");
@@ -58,7 +58,7 @@
                   <div class="panel-group"  >
                      <div class="panel panel-info">
                         <div class="panel-body">
-                           <h1>Add Skills  ${sessionScope.appID}</h1>
+                           <h1>Add Skills  </h1>
                            <p>
                               Skill 1  <input type='text'  class="form-control" name='txtSkill1'
                                  placeholder="enter Skill 1" id='txtSkill1' required> </input> 

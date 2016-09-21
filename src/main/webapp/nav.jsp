@@ -1,10 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+
+
         <%
 
             String role = null;
@@ -48,7 +45,9 @@
                
 
             </ul>
+            
             <ul class="nav navbar-nav navbar-right">
+                  <li id="adminTools"><a href="adminUpdate.jsp"><span class="	glyphicon glyphicon-off"> Admin Tools</span> </a></li>
                 <li id="logout"><a href="logout.jsp"><span class="glyphicon glyphicon-log-in"></span>Logout </a></li>
 
             </ul>
@@ -105,8 +104,4 @@
         }
 
     %>
-    
-</head>
-
-</html>
 

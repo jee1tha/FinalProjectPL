@@ -45,7 +45,7 @@ public class applicationServlet extends HttpServlet {
             Applicants app = new Applicants();
             user = (String) request.getSession().getAttribute("username");
             app.setAppID(Integer.parseInt(request.getSession().getAttribute("appID").toString()));
-
+            app.setName(request.getSession().getAttribute("name").toString());
             Skills skill = new Skills();
 
             skill.getSkillName().add(request.getParameter("txtSkill1"));

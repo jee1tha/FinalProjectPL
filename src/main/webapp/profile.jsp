@@ -7,7 +7,7 @@
 <%@page import="businessoperationslayer.Applicants"%>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
          <%
             String username = (String)session.getAttribute("username");

@@ -2,9 +2,9 @@
 <%@page import="businessoperationslayer.Job"%>
 <%@page language="java"%>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     
 <link href="home.css" rel="stylesheet" type="text/css" />
@@ -59,7 +59,7 @@
         <div class="col-md-6 col-sm-3 panel-group"  >
              <div class="panel panel-info">
                  <div class="panel-body"> <h3> What is Project InGrow?</h3> </div>
-                 ${username}
+        
              </div>
            
          </div>
@@ -86,6 +86,7 @@
                            </p>
         </div>
     </div>
+                          
 
 </div>
 	

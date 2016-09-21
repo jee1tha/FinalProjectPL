@@ -5,11 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>ingrow Header</title>
+
     <div class="row">
     </div>
     <%   if ((String) session.getAttribute("username") != null) {
@@ -17,6 +13,7 @@
 
             out.println("<div class='col-md-10 col-sm-5 text-center' id= 'welcome2'>");
             out.println("<div class='alert alert-success'>");
+           // out.println("<img src='inGrowLogo.jpg' class='img-rounded' alt='Cinque Terre' width='304' height='236'>");
             out.println("InGrow - Intelligent Growth </div> </div>");
             out.println("<div class='col-md-2 col-sm-1 text-center'  id= 'welcome2' >");
             out.println("Welcome" + " " + name);
@@ -33,6 +30,3 @@
 
 
 
-</head>
-
-</html>

@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
    
     <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link href="home.css" rel="stylesheet" type="text/css" />
@@ -46,21 +46,17 @@
 %>
                                                   <% if(session.getAttribute("username") !=null){
                 String username = (String)session.getAttribute("username");;
-              
-                if (username != null ){  
+                                                 
+                                                  if (username != null ){  
                     %>
                    
                     <Script >alert('Login successful'); 
                     window.location = "index.jsp";</Script>
                     
                      
-                    <%  }  else{
-%>
-                         <Script > alert('Login Failed. Please Try again'); 
-                         window.location = "login.jsp";</Script>
- <% }    
+                    <%  }  
 
-                        }
+                }
 %>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

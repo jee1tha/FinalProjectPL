@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <%
             String username = (String)session.getAttribute("username");
