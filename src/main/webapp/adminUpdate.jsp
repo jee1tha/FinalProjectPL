@@ -1,8 +1,3 @@
-<%-- 
-    Document   : adminToolServlet
-    Created on : Sep 18, 2016, 1:05:16 AM
-    Author     : VABAYJE
---%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
@@ -13,17 +8,12 @@
             String username = (String)session.getAttribute("username");
             if(username != null){
                 String type = (String) session.getAttribute("role");
-            if( type.equals("admin" )){
+            if( type.equals("user" )){
                 %>
                  <Script >alert('Not Allowed. '); 
                     window.location = "index.jsp";</Script>
                 <%
-            }if( type.equals("user")){
- %>
-                 <Script >alert('Not Allowed. '); 
-                    window.location = "index.jsp";</Script>
-                <%
-}
+            }
 }else{
  %>
                  <Script >alert('Not Authenticated. Please Login!'); 
@@ -85,24 +75,13 @@
 
         <div class="col-md-8 col-sm-4 panel-group"  >
              <div class="panel panel-danger text-center">
-                 <div class="panel-body"> <h3> What would you like to do ? </h3> <h6> Please be informed that the Training process might take long depending on the server performance</h6></div>
-                 <a href="updateSkillsCriteria.jsp" class="btn btn-danger">View and Update Skills Criteria </a>
-       <a href="updateExpQuaCriteria.jsp" class="btn btn-danger">View and Update Qualifications and Experience Criteria </a>
+                 <div class="panel-body"> <h3> What would you like to do ? </h3> </div>
                  <div class="form-group">
                    
-                  <form method="Post " action="adminToolServlet"  >
-                 <div class="checkbox">
-  <label><input type="checkbox" name="skills"  value="trainSkills">Train Skill Artificial Neural Network</label>
-</div>
-<div class="checkbox">
-  <label><input type="checkbox" name="expQua" value="trainExpQua">Train Experience/Qualification Artificial Neural Network</label>
-</div>
-<div class="checkbox ">
-  <label><input type="checkbox" name="reEvaluate" value="reEvaluate" >Re-Evaluate all Applicants</label>
-</div>
-             </div>
-               <button type="submit" class="btn btn-success" name="btnLogin">Submit</button>
-    <a href="index.jsp" class="btn btn-danger">Cancel </a>
+             
+               
+    <a href="updateSkillsCriteria.jsp" class="btn btn-danger">View and Update Skills Criteria </a>
+       <a href="updateExpQuaCriteria.jsp" class="btn btn-danger">View and Update Qualifications and Experience Criteria </a>
                   </form>
                   <br>
                   <br>
@@ -110,7 +89,8 @@
      <div class="col-md-2 col-sm-1 panel-group"  >
      </div>
     
-	
+	</div>
+
 </div>
 
 <footer> Copyrights 2016 InGrow </footer>

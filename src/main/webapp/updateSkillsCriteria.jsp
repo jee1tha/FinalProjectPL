@@ -9,18 +9,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
          <%
             String username = (String)session.getAttribute("username");
             if(username != null){
                 String type = (String) session.getAttribute("role");
-            if( type.equals("admin" )){
-                %>
-                 <Script >alert('Not Allowed. '); 
-                    window.location = "index.jsp";</Script>
-                <%
-            }if( type.equals("user")){
+            if( type.equals("user")){
  %>
                  <Script >alert('Not Allowed. '); 
                     window.location = "index.jsp";</Script>
