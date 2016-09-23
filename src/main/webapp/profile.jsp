@@ -152,21 +152,21 @@
                                     <p>
                                         <label for="txtInstitute"> <span class="	glyphicon glyphicon-book"> Institute</span>    </label>
                                        <b>  <input type='text' name='txtInstitute'
-                                               class="form-control" id='txtInstitute' value=<%= pl.getApplicantQualifications(app).get(0).getInstitute() %>  disabled> </input> </b>
+                                               class="form-control" id='txtInstitute' value='<%= pl.getApplicantQualifications(app).get(0).getInstitute() %>'  disabled> </input> </b>
                                     </p>
                                 </div>
                                 <div class=" col-md-4 col-sm-2 ">
                                     <p>
                                         <label for="txtQualification"> <span class="	glyphicon glyphicon-book"> Qualification Name</span>   </label>
                                        <b>  <input type='text' name='txtQualification'
-                                               class="form-control" id='txtQualification' value=<%= pl.getApplicantQualifications(app).get(0).getName() %> disabled> </input> </b>
+                                               class="form-control" id='txtQualification' value='<%= pl.getApplicantQualifications(app).get(0).getName() %>' disabled> </input> </b>
                                     </p>
                                 </div>
                                 <div class=" col-md-4 col-sm-2 ">
                                     <p>
                                         <label for="txtDuration"> <span class="glyphicon glyphicon-pencil"> Final Grade</span>  </label>
                                          <b> <input type='text' name='txtDuration'
-                                               class="form-control" id='txtDuration'  value=<%= pl.getApplicantQualifications(app).get(0).getQClass() %> disabled> </input>  </b>
+                                               class="form-control" id='txtDuration'  value='<%= pl.getApplicantQualifications(app).get(0).getQClass() %>' disabled> </input>  </b>
                                     </p>
                                 </div>
                             </div>
@@ -186,14 +186,14 @@
                                     <p>
                                         <label for="txtOrganization"> <span class="glyphicon glyphicon-open-file"> Organization </span>  </label>
                                         <b> <input type='text' name='txtOrganization'
-                                               class="form-control" id='txtOrganization' value=<%= pl.getApplicantExp(app).get(0).getOrganization() %> disabled> </input> </b>
+                                               class="form-control" id='txtOrganization' value='<%= pl.getApplicantExp(app).get(0).getOrganization() %>' disabled> </input> </b>
                                     </p>
                                 </div>
                                 <div class=" col-md-4 col-sm-2 ">
                                     <p>
                                         <label for="txtPost"><span class="glyphicon glyphicon-file"> Post </span> </label>
                                         <b> <input type='text' name='txtPost'
-                                               class="form-control" id='txtPost' value=<%= pl.getApplicantExp(app).get(0).getPost() %> disabled> </input> </b>
+                                               class="form-control" id='txtPost' value='<%= pl.getApplicantExp(app).get(0).getPost() %>' disabled> </input> </b>
                                     </p>
                                 </div>
                                 <div class=" col-md-4 col-sm-2 ">

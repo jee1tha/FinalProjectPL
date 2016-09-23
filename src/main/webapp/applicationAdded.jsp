@@ -15,7 +15,7 @@
         if(request.getAttribute("result")== "added"){
         %>
         <script >alert('Application Sent');
-            window.location = "index.jsp";
+            window.location = "login.jsp";
         </script>
         
         <%  }else{
