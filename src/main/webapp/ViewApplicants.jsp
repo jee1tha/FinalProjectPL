@@ -5,6 +5,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+       <%
+            String username = (String)session.getAttribute("username");
+            if(username != null){
+                String type = (String) session.getAttribute("role");
+            if( type.equals("user" )){
+                %>
+                 <Script >alert('Not Allowed. '); 
+                    window.location = "index.jsp";</Script>
+                <%
+            }
+}else{
+ %>
+                 <Script >alert('Not Authenticated. Please Login!'); 
+                    window.location = "login.jsp";</Script>
+                <%
+}
+            %>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Report</title>
 

@@ -12,18 +12,20 @@
     </div>
     <%   if ((String) session.getAttribute("username") != null) {
             String name = (String) session.getAttribute("username");
+           
 
-            out.println("<div class='col-md-10 col-sm-5 text-center' id= 'welcome2'>");
-            out.println("<div class='alert alert-success'>");
-           	out.println("<img src='inGrowLogo.jpg' class='img-rounded' alt='Cinque Terre' width='150' height='100'>");
-            out.println("InGrow - Growing Intelligence </div> </div>");
-            out.println("<div class='col-md-2 col-sm-1 text-center'  id= 'welcome2' >");
-            out.println("Welcome" + " " + name);
+            out.println("<div class='col-md-10 col-sm-5 text-center ' id= 'welcome2'>");
+            out.println("<div>");
+           	out.println("<img src='inGrowLogo.jpg' class='img-rounded ' alt='Cinque Terre' width='212' height='124'>");
+            out.println("</div> </div>");
+       
+            out.println("<div class='col-md-2 col-sm-1 nopadding' id= 'welcome2' >");
+            out.println("<font size='4' color='darkgray'>  Welcome </font>" + " <font size='5' color='black'> <br> " + name  + "</font> ");
             out.println(" </div>");
 
         } else {
     %>
-    <div class='col-md-12 col-sm-6 text-center' id= 'welcome2'>  <div class='alert alert-success'> <img src='inGrowLogo.jpg' class='img-rounded' alt='Cinque Terre' width='150' height='100'> Growing Intelligence </div>  
+    <div class='col-md-12 col-sm-6 text-center' id= 'welcome2'>  <div > <img src='inGrowLogo.jpg' class='img-rounded' alt='Cinque Terre' width='212' height='124'> <font size='5' color='black'>  </font> </div>  
     </div>
     <%
         }

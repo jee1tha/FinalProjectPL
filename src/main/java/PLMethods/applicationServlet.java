@@ -70,12 +70,10 @@ public class applicationServlet extends HttpServlet {
             int r =pm.addUserInformation(app, job, qua, exp, skill) ;
             System.out.print(user);
             
-                   if (r > 1) {
+                   if (r >= 1) {
                request.setAttribute("result", "added");
                 
-            } if (r == 1) {
-                request.setAttribute("result", "added");
-            }else {
+            } else {
                      request.setAttribute("result", "failed");
                 
             }

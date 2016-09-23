@@ -59,7 +59,7 @@
         <div class="col-md-6 col-sm-3 panel-group"  >
              <div class="panel panel-info">
                  
-                 <img src='banner.jpg' class='img-rounded' alt='Cinque Terre' width='550' height='520'>
+                 <img src='banner.jpg' class='img-rounded' alt='Cinque Terre' width='550' height='550'>
              </div>
            
          </div>

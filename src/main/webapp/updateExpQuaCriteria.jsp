@@ -69,11 +69,11 @@
                                     arraysizeExp++;
                             %><form action=updateExpQuaCriteriaServlet method="POST" >
                                 <tr>
-                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtExp<%= i%>" id="txtExpID<%= i%>" value=<%= plm.getExpAll().get(i).getExpid() %> disabled > 
+                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtExp<%= i%>" id="txtExpID<%= i%>" value='<%= plm.getExpAll().get(i).getExpid() %>' disabled > 
                                     </td>
                                 <input type="hidden" size="1" class="form-control" name="txtExpID<%= i%>" id="txtExpID<%= i%>" value=<%= plm.getExpAll().get(i).getExpid() %>  >
-                                <td class="success"><input type="text" size="2" class="form-control" name="txtOrg<%= i%>" id="txtOrgName<%= i%>" value= <%=  plm.getExpAll().get(i).getOrganization() %> disabled ></td>
-                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtPost<%= i%>" id="txtPost<%= i%>" value= <%=  plm.getExpAll().get(i).getPost() %> disabled ></td>
+                                <td class="success"><input type="text" size="2" class="form-control" name="txtOrg<%= i%>" id="txtOrgName<%= i%>" value= '<%=  plm.getExpAll().get(i).getOrganization() %>' disabled ></td>
+                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtPost<%= i%>" id="txtPost<%= i%>" value='<%=  plm.getExpAll().get(i).getPost() %>' disabled ></td>
 
                                 <td  class="success" >
                                     <select  name="newExpEligibility<%= i%>" class="selectpicker">
@@ -136,12 +136,12 @@
                                     arraysizeQua++;
                             %>
                                 <tr>
-                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtQua<%= s%>" id="txtQua<%= s%>" value=<%= plm.getQualificationsAll().get(s).getId() %> disabled > 
+                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtQua<%= s%>" id="txtQua<%= s%>" value='<%= plm.getQualificationsAll().get(s).getId() %>' disabled > 
                                     </td>
-                                <input type="hidden" size="1" class="form-control" name="txtQuaID<%= s%>" id="txtQuaID<%= s%>" value=<%= plm.getQualificationsAll().get(s).getId() %>  >
-                                <td class="success"><input type="text" size="2" class="form-control" name="txtInstitute<%= s%>" id="txtInstitute<%= s%>" value= <%=  plm.getQualificationsAll().get(s).getInstitute() %> disabled ></td>
-                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtQName<%= s%>" id="txtQName<%= s%>" value= <%=  plm.getQualificationsAll().get(s).getName() %> disabled ></td>
-                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtQGrade<%= s%>" id="txtQGrade<%= s%>" value= <%=  plm.getQualificationsAll().get(s).getQClass() %> disabled ></td>
+                                <input type="hidden" size="1" class="form-control" name="txtQuaID<%= s%>" id="txtQuaID<%= s%>" value='<%= plm.getQualificationsAll().get(s).getId() %>'  >
+                                <td class="success"><input type="text" size="2" class="form-control" name="txtInstitute<%= s%>" id="txtInstitute<%= s%>" value= '<%=  plm.getQualificationsAll().get(s).getInstitute() %>' disabled ></td>
+                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtQName<%= s%>" id="txtQName<%= s%>" value= '<%=  plm.getQualificationsAll().get(s).getName() %>' disabled ></td>
+                                                                <td class="success"><input type="text" size="2" class="form-control" name="txtQGrade<%= s%>" id="txtQGrade<%= s%>" value= '<%=  plm.getQualificationsAll().get(s).getQClass() %>' disabled ></td>
 
                                 <td  class="success" >
                                     <select  name="newQuaEligibility<%= s%>" class="selectpicker">
@@ -184,7 +184,7 @@
 
 
 
-                    <br> <input size="50" type="submit" value="Print Skills Page"
+                    <br> <input size="50"  value="Print Skills Page"
                                 class="btn btn-danger" onClick="window.print()" />  
                     <input type='submit' class="btn btn-success" value="Submit" >
                     <a href="index.jsp" class="btn btn-default"> Cancel </a><br> <br> <br>

@@ -70,10 +70,10 @@
                                     arraysize++;
                             %><form action=updateSkillsCriteriaServlet method="POST" >
                                 <tr>
-                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtSkill<%= i%>" id="txtSkillID<%= i%>" value=<%= plm.getSkillAll().get(i).getSkillID()%> disabled > 
+                                    <td class="danger"> <input type="text" size="1" class="form-control" name="txtSkill<%= i%>" id="txtSkillID<%= i%>" value='<%= plm.getSkillAll().get(i).getSkillID()%>' disabled > 
                                     </td>
-                                        <input type="hidden" size="1" class="form-control" name="txtSkillID<%= i%>" id="txtSkillID<%= i%>" value=<%= plm.getSkillAll().get(i).getSkillID()%>  >
-                                    <td class="success"><input type="text" size="2" class="form-control" name="txtSkillName<%= i%>" id="txtSkillName<%= i%>" value= <%=  plm.getSkillAll().get(i).getSkill()%> disabled ></td>
+                                        <input type="hidden" size="1" class="form-control" name="txtSkillID<%= i%>" id="txtSkillID<%= i%>" value='<%= plm.getSkillAll().get(i).getSkillID()%>'  >
+                                    <td class="success"><input type="text" size="2" class="form-control" name="txtSkillName<%= i%>" id="txtSkillName<%= i%>" value= '<%=  plm.getSkillAll().get(i).getSkill()%>' disabled ></td>
                                     <td  class="success" >
                                         <select  name="newEligibility<%= i%>" class="selectpicker">
                                             <%  
@@ -114,7 +114,7 @@
                                 </div>
 
 
-                                <br> <input size="50" type="submit" value="Print Skills Page"
+                                <br> <input size="50" value="Print Skills Page"
                                             class="btn btn-danger" onClick="window.print()" />  
                                 <input type='submit' class="btn btn-success" value="Submit" >
                                 <a href="index.jsp" class="btn btn-default"> Cancel </a><br> <br> <br>
